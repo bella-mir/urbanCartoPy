@@ -4,7 +4,7 @@
 
 It is a [training course](https://bella-mir.github.io/urbanCartoPy/intro.html) on spatial data analysis and visualization in urban cartography
 
-<p style="color:#58568E; font-style:italic">The work is still in progress as I'm developing it in July-August 2025. But you can follow thw updates here</p>
+<p style="color:#58568E; font-style:italic">The work is still in progress as I'm developing it during July-August 2025. You can follow thw updates here</p>
 
 The aim of the course is to show how basic programming skills can be applied to analysing and visualising the urban environment. We will cover basic cartographic concepts and get familiar with libraries for geospatial data analysis and visualisation.
 

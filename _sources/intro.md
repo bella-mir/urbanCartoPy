@@ -1,16 +1,25 @@
-# Urban Cartography Training Course
+# Spatial Data Analysis and Visualisation in Urban Cartography
 
-## About
+<p style="color:#58568E; font-style:italic">This course is currently under development (as of July 2025). Updates will be posted here.</p>
 
-It is a [training course](https://bella-mir.github.io/urbanCartoPy/intro.html) on spatial data analysis and visualization in urban cartography
+## What You’ll Create & Learn
 
-<p style="color:#58568E; font-style:italic">The work is still in progress as I'm developing it during July-August 2025. You can follow thw updates here</p>
+In this [course](https://bella-mir.github.io/urbanCartoPy/intro.html), you will apply basic programming skills to analyze and visualize the urban environment. Through hands-on tasks, you’ll explore fundamental cartographic concepts and become familiar with libraries for geospatial data analysis and visualization. The course focuses on real-world problems, particularly urban accessibility and the 15-minute city concept. Your final project will involve assessing a city's accessibility and creating interactive maps to visualize your findings.
 
-The aim of the course is to show how basic programming skills can be applied to analysing and visualising the urban environment. We will cover basic cartographic concepts and get familiar with libraries for geospatial data analysis and visualisation.
+## For Whom This Course is Intended
 
-The course will not be built around theoretical concepts or specific tools, but rather around the tasks they help to solve. We will explore the urban environment by analysing accessibility and understanding the concept of the 15-minute city, and we will visualise the results on interactive maps.
+- **Urban Planners** looking to enhance their skills in spatial data analysis and cartography.
+- **Anyone Curious** about using Python to analyze and visualize cities.
 
-We will not be covering Python basics in this course, but there are many open courses available to help you acquire foundational knowledge of Python.
+## Quick Facts
+
+- **Format:** Online, hands-on projects
+- **Length:** Self-paced with approximately 10-12 hours of content
+- **Prerequisites:** This course does not cover Python basics. If you're new to Python, please complete an introductory course before starting this one.
+
+Certainly! Here’s an adapted description of the course in the same format, focusing on the course content you provided:
+
+## Course Structure
 
 ```{tableofcontents}
 

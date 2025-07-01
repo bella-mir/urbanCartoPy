@@ -1,9 +1,17 @@
 # Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: README
-# chapters:
-# - file: markdown
-# - file: notebooks
-# - file: markdown-notebooks
+root: intro
+parts:
+  - caption: Getting Started
+    chapters:
+      - file: modules/module_0
+
+  - caption: Modules
+    chapters:
+      - file: modules/module_1
+      - file: modules/module_2
+      - file: modules/module_3
+      - file: modules/module_4
+      - file: modules/module_5
+

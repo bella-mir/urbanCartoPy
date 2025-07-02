@@ -17,8 +17,6 @@ In this [course](https://bella-mir.github.io/urbanCartoPy/intro.html), you will 
 - **Length:** Self-paced with approximately 10-12 hours of content
 - **Prerequisites:** This course does not cover Python basics. If you're new to Python, please complete an introductory course before starting this one.
 
-Certainly! Here’s an adapted description of the course in the same format, focusing on the course content you provided:
-
 ## Course Structure
 
 ```{tableofcontents}

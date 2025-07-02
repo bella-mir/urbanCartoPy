@@ -4,7 +4,7 @@
 title: Urban Cartography
 author: Bella Mironova
 logo: logo.png
-copyright: "© 2025 Bella Mironova"
+copyright: "2025"
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

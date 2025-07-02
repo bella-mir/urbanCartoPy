@@ -9,7 +9,12 @@ In this [course](https://bella-mir.github.io/urbanCartoPy/intro.html), you will 
 ## For Whom This Course is Intended
 
 - **Urban Planners** looking to enhance their skills in spatial data analysis and cartography.
-- **Anyone Curious** about using Python to analyze and visualize cities.
+- **Anyone Curious** about using Python to analyze and visualize urban data.
+
+## What You’ll Get\*\*
+
+- **Practical Skills:** You’ll get experience working with vector geodata, projections, coordinate systems, and the core libraries for spatial analysis in Python. You'll also learn how to perform spatial operations, network analysis, and create interactive visualizations.
+- **Interactive Projects:** Through a series of practical tasks, you’ll evaluate urban accessibility and build a model of the 15-minute city, visualizing your results on an interactive map.
 
 ## Quick Facts
 
@@ -19,6 +24,6 @@ In this [course](https://bella-mir.github.io/urbanCartoPy/intro.html), you will 
 
 ## Course Structure
 
-```{tableofcontents}
+<!-- ```{tableofcontents}
 
-```
+``` -->

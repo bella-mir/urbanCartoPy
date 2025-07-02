@@ -9,15 +9,13 @@ In this [course](https://bella-mir.github.io/urbanCartoPy/intro.html), you will 
 ## For Whom This Course is Intended
 
 - **Urban Planners** looking to enhance their skills in spatial data analysis and cartography.
-- **Anyone Curious** about using Python to analyze and visualize cities.
+- **Anyone Curious** about using Python to analyze and visualize urban data.
 
 ## Quick Facts
 
 - **Format:** Online, hands-on projects
 - **Length:** Self-paced with approximately 10-12 hours of content
 - **Prerequisites:** This course does not cover Python basics. If you're new to Python, please complete an introductory course before starting this one.
-
-Certainly! Here’s an adapted description of the course in the same format, focusing on the course content you provided:
 
 ## Course Structure
 

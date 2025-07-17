@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. Task - Exploring Landuse &#8212; Urban Cartography</title>
+    <title>Task - Exploring Landuse &#8212; Urban Cartography</title>
   
   
   
@@ -161,10 +161,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">I. Geospatial Data</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="module_10.html">Overview - Geospatial Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_11.html">1 Spatial Data Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_12.html">2. Reading and Exploring Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_13.html">3. Exporting data from OSM</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="module_11.html">Spatial Data Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_12.html">Reading and Exploring Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_13.html">Exporting data from OSM</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">II. Projections and Coordinate Reference Systems</span></p>
 <ul class="nav bd-sidenav">
@@ -362,7 +361,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>4. Task - Exploring Landuse</h1>
+    <h1>Task - Exploring Landuse</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -372,20 +371,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Task - Exploring Landuse</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#suggested-workflow">Suggested Workflow</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-0-import-libraries">Step 0: Import libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-choose-an-area-of-interest">Step 1: Choose an area of interest</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-download-data-from-osm-using-osmnx">Step 2: Download data from OSM using OSMnx</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-inspect-the-data">Step 3: Inspect the Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-clean-the-data">Step 4: Clean the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-visualize-the-data">Step 5: Visualize the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-saving-to-file-optional">Step 6: Saving to file (optional)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-explore-and-reflect">Step 7: Explore and Reflect</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suggested-workflow">Suggested Workflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-0-import-libraries">Step 0: Import libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-choose-an-area-of-interest">Step 1: Choose an area of interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-download-data-from-osm-using-osmnx">Step 2: Download data from OSM using OSMnx</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-inspect-the-data">Step 3: Inspect the Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-clean-the-data">Step 4: Clean the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-visualize-the-data">Step 5: Visualize the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-saving-to-file-optional">Step 6: Saving to file (optional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-explore-and-reflect">Step 7: Explore and Reflect</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -396,15 +393,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="section" id="task-exploring-landuse">
-<h1>4. Task - Exploring Landuse<a class="headerlink" href="#task-exploring-landuse" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="task-exploring-landuse">
+<h1>Task - Exploring Landuse<a class="headerlink" href="#task-exploring-landuse" title="Permalink to this heading">#</a></h1>
 <p>In this module, we’ve learned how to work with geospatial data in Python and how to retrieve data from OpenStreetMap (OSM).<br />
 Now, let’s put these skills into practice by exploring <strong>land use</strong> in a neighborhood or city you’re interested in, using OSM data.</p>
-</div>
 <div class="section" id="suggested-workflow">
-<h1>Suggested Workflow<a class="headerlink" href="#suggested-workflow" title="Permalink to this heading">#</a></h1>
+<h2>Suggested Workflow<a class="headerlink" href="#suggested-workflow" title="Permalink to this heading">#</a></h2>
 <div class="section" id="step-0-import-libraries">
-<h2>Step 0: Import libraries<a class="headerlink" href="#step-0-import-libraries" title="Permalink to this heading">#</a></h2>
+<h3>Step 0: Import libraries<a class="headerlink" href="#step-0-import-libraries" title="Permalink to this heading">#</a></h3>
 <p>Don’t forget to import libraries you will use</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -416,7 +412,7 @@ Now, let’s put these skills into practice by exploring <strong>land use</stron
 </div>
 </div>
 <div class="section" id="step-1-choose-an-area-of-interest">
-<h2>Step 1: Choose an area of interest<a class="headerlink" href="#step-1-choose-an-area-of-interest" title="Permalink to this heading">#</a></h2>
+<h3>Step 1: Choose an area of interest<a class="headerlink" href="#step-1-choose-an-area-of-interest" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Pick a city, district, or neighborhood you want to analyze.</p></li>
 <li><p>You can define it by name (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;Saint</span> <span class="pre">Petersburg,</span> <span class="pre">Russia&quot;</span></code>) or draw/select a polygon manually.</p></li>
@@ -431,7 +427,7 @@ Now, let’s put these skills into practice by exploring <strong>land use</stron
 </div>
 </div>
 <div class="section" id="step-2-download-data-from-osm-using-osmnx">
-<h2>Step 2: Download data from OSM using OSMnx<a class="headerlink" href="#step-2-download-data-from-osm-using-osmnx" title="Permalink to this heading">#</a></h2>
+<h3>Step 2: Download data from OSM using OSMnx<a class="headerlink" href="#step-2-download-data-from-osm-using-osmnx" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">osmnx.geocode_to_gdf()</span></code> to get the boundary of your area (you dont need it fore getting the landuse features, but it might be useful to check if the name of the area is geocoded correctly)</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">osmnx.features_from_polygon()</span></code> or <code class="docutils literal notranslate"><span class="pre">osmnx.geometries_from_place()</span></code> to retrieve <strong>land use</strong> features</p></li>
@@ -448,7 +444,7 @@ Now, let’s put these skills into practice by exploring <strong>land use</stron
 </div>
 </div>
 <div class="section" id="step-3-inspect-the-data">
-<h2>Step 3: Inspect the Data<a class="headerlink" href="#step-3-inspect-the-data" title="Permalink to this heading">#</a></h2>
+<h3>Step 3: Inspect the Data<a class="headerlink" href="#step-3-inspect-the-data" title="Permalink to this heading">#</a></h3>
 <p>Before diving into analysis, it’s important to <strong>understand what’s in the dataset</strong>.<br />
 Let’s take a closer look at the structure and contents of the downloaded OSM data.</p>
 <p>Here are some key things to check:</p>
@@ -475,7 +471,7 @@ Let’s take a closer look at the structure and contents of the downloaded OSM d
 </ul>
 </div>
 <div class="section" id="step-4-clean-the-data">
-<h2>Step 4: Clean the data<a class="headerlink" href="#step-4-clean-the-data" title="Permalink to this heading">#</a></h2>
+<h3>Step 4: Clean the data<a class="headerlink" href="#step-4-clean-the-data" title="Permalink to this heading">#</a></h3>
 <p>Filter the dataset to keep only relevant land use features and polygon geometries.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -487,7 +483,7 @@ Let’s take a closer look at the structure and contents of the downloaded OSM d
 </div>
 </div>
 <div class="section" id="step-5-visualize-the-data">
-<h2>Step 5: Visualize the data<a class="headerlink" href="#step-5-visualize-the-data" title="Permalink to this heading">#</a></h2>
+<h3>Step 5: Visualize the data<a class="headerlink" href="#step-5-visualize-the-data" title="Permalink to this heading">#</a></h3>
 <p>Plot the data to get a quick spatial overview and check if the geometries look reasonable.</p>
 <p>You can use .explore() to create an interactive map — try coloring polygons by land use type with landuse_poly.explore(column=”landuse”)</p>
 <div class="cell docutils container">
@@ -499,7 +495,7 @@ Let’s take a closer look at the structure and contents of the downloaded OSM d
 </div>
 </div>
 <div class="section" id="step-6-saving-to-file-optional">
-<h2>Step 6: Saving to file (optional)<a class="headerlink" href="#step-6-saving-to-file-optional" title="Permalink to this heading">#</a></h2>
+<h3>Step 6: Saving to file (optional)<a class="headerlink" href="#step-6-saving-to-file-optional" title="Permalink to this heading">#</a></h3>
 <p>If you want you can save the data to file to continue working with it later (we will continue exploring landuse in the next modules)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -510,7 +506,7 @@ Let’s take a closer look at the structure and contents of the downloaded OSM d
 </div>
 </div>
 <div class="section" id="step-7-explore-and-reflect">
-<h2>Step 7: Explore and Reflect<a class="headerlink" href="#step-7-explore-and-reflect" title="Permalink to this heading">#</a></h2>
+<h3>Step 7: Explore and Reflect<a class="headerlink" href="#step-7-explore-and-reflect" title="Permalink to this heading">#</a></h3>
 <p>Take a closer look at the resulting land use map for your chosen area.</p>
 <p>Ask yourself:</p>
 <ul class="simple">
@@ -522,6 +518,7 @@ Are certain areas mislabeled, outdated, or missing?</p></li>
 </ul>
 <p>You can also compare your results with official planning maps if available.</p>
 <p>This step is important not only for validating your data, but also for building your <strong>critical thinking</strong> as a spatial analyst.</p>
+</div>
 </div>
 </div>
 
@@ -574,20 +571,18 @@ Are certain areas mislabeled, outdated, or missing?</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Task - Exploring Landuse</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#suggested-workflow">Suggested Workflow</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-0-import-libraries">Step 0: Import libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-choose-an-area-of-interest">Step 1: Choose an area of interest</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-download-data-from-osm-using-osmnx">Step 2: Download data from OSM using OSMnx</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-inspect-the-data">Step 3: Inspect the Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-clean-the-data">Step 4: Clean the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-visualize-the-data">Step 5: Visualize the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-saving-to-file-optional">Step 6: Saving to file (optional)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-explore-and-reflect">Step 7: Explore and Reflect</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suggested-workflow">Suggested Workflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-0-import-libraries">Step 0: Import libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-choose-an-area-of-interest">Step 1: Choose an area of interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-download-data-from-osm-using-osmnx">Step 2: Download data from OSM using OSMnx</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-inspect-the-data">Step 3: Inspect the Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-clean-the-data">Step 4: Clean the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-visualize-the-data">Step 5: Visualize the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-saving-to-file-optional">Step 6: Saving to file (optional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-explore-and-reflect">Step 7: Explore and Reflect</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>

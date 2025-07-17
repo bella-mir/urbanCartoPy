@@ -1,4 +1,4 @@
-# Spatial Data Analysis and Visualisation in Urban Cartography
+# Spatial Data Analysis in Urban Cartography
 
 <p style="color:#58568E; font-style:italic">This course is currently under development (as of July 2025). Updates will be posted here.</p>
 
@@ -17,12 +17,13 @@ The final project of the course will combine all the skills you have learned thr
 
 ## Format
 
-The course consists of a set of Jupyter notebooks (combined into a Jupyter Book) for each module, which you can use either separately or all together. Each module includes basic theory and links to additional resources for self-learning, examples and tasks.
+The course consists of a set of Jupyter notebooks (combined into a Jupyter Book) for each module, which you can use either separately or all together. Each module includes basic theory and links to additional resources for self-learning, code-examples and tasks.
 
 The course is accompanied by short videos explaining key concepts.
+
 It is self-paced with approximately 10–12 hours of content.
 
-At the start and at the end of each module, you may be asked to participate in a short survey to help assess your skills and competencies before and after completing the module. Additionally, you may be asked to submit the results of the tasks (optional).
+At the start and at the end of each module, you may be asked to participate in a short survey to help assess your skills and competencies before and after completing the module. Additionally, you may be asked to submit the results of the tasks (optional). It will help to make the next iterations of the course better.
 
 ## Quick Facts
 
@@ -32,7 +33,9 @@ At the start and at the end of each module, you may be asked to participate in a
 
 ## Other information
 
-This course is part of a master’s thesis by Bella Mironova within the [Erasmus Mundus Master Programme in Cartography](https://cartographymaster.eu/) (2025), under the supervision of Georg Gartner. More information about this master’s thesis research will be available in the coming months.
+This course is part of a master’s thesis by Bella Mironova within the [Erasmus Mundus Master Programme in Cartography](https://cartographymaster.eu/) (2025), under the supervision of Georg Gartner and Juliane Cron.
+
+More information about this master’s thesis research will be available in the coming months.
 
 ## Course Structure
 

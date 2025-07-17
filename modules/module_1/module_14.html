@@ -1,0 +1,643 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. Task - Exploring Landuse &#8212; Urban Cartography</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modules/module_1/module_14';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Spatial Data Analysis in Urban Cartography
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../module_0/module_01.html">Environment setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_0/module_02.html">Python in GIS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">I. Geospatial Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="module_10.html">Overview - Geospatial Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_11.html">1 Spatial Data Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_12.html">2. Reading and Exploring Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_13.html">3. Exporting data from OSM</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">II. Projections and Coordinate Reference Systems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../module_2/module_20.html">II. Projections and Coordinates Reference Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2/module_21.html">II.1 Introduction to Projections and Coordinate Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2/module_22.html">II.2 Reprojecting Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2/module_23.html">II.3 Measuring Areas and Distances</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">III. Spatial Operations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../module_3/module_30.html">III. Spatial Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3/module_31.html">III.1 Basic Geoprocessing Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3/module_32.html">III.2 Spatial Relationships and Join</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3/module_33.html">III.3 Spatial Aggregation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmodules/module_1/module_14.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/modules/module_1/module_14.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>4. Task - Exploring Landuse</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Task - Exploring Landuse</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#suggested-workflow">Suggested Workflow</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-0-import-libraries">Step 0: Import libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-choose-an-area-of-interest">Step 1: Choose an area of interest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-download-data-from-osm-using-osmnx">Step 2: Download data from OSM using OSMnx</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-inspect-the-data">Step 3: Inspect the Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-clean-the-data">Step 4: Clean the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-visualize-the-data">Step 5: Visualize the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-saving-to-file-optional">Step 6: Saving to file (optional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-explore-and-reflect">Step 7: Explore and Reflect</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="section" id="task-exploring-landuse">
+<h1>4. Task - Exploring Landuse<a class="headerlink" href="#task-exploring-landuse" title="Permalink to this heading">#</a></h1>
+<p>In this module, we’ve learned how to work with geospatial data in Python and how to retrieve data from OpenStreetMap (OSM).<br />
+Now, let’s put these skills into practice by exploring <strong>land use</strong> in a neighborhood or city you’re interested in, using OSM data.</p>
+</div>
+<div class="section" id="suggested-workflow">
+<h1>Suggested Workflow<a class="headerlink" href="#suggested-workflow" title="Permalink to this heading">#</a></h1>
+<div class="section" id="step-0-import-libraries">
+<h2>Step 0: Import libraries<a class="headerlink" href="#step-0-import-libraries" title="Permalink to this heading">#</a></h2>
+<p>Don’t forget to import libraries you will use</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">osmnx</span> <span class="k">as</span> <span class="nn">ox</span>
+<span class="c1">#more libraries here ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-1-choose-an-area-of-interest">
+<h2>Step 1: Choose an area of interest<a class="headerlink" href="#step-1-choose-an-area-of-interest" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Pick a city, district, or neighborhood you want to analyze.</p></li>
+<li><p>You can define it by name (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;Saint</span> <span class="pre">Petersburg,</span> <span class="pre">Russia&quot;</span></code>) or draw/select a polygon manually.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#example</span>
+<span class="n">area_name</span> <span class="o">=</span> <span class="s2">&quot;Leopoldstadt, Vienna, Austria&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-2-download-data-from-osm-using-osmnx">
+<h2>Step 2: Download data from OSM using OSMnx<a class="headerlink" href="#step-2-download-data-from-osm-using-osmnx" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">osmnx.geocode_to_gdf()</span></code> to get the boundary of your area (you dont need it fore getting the landuse features, but it might be useful to check if the name of the area is geocoded correctly)</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">osmnx.features_from_polygon()</span></code> or <code class="docutils literal notranslate"><span class="pre">osmnx.geometries_from_place()</span></code> to retrieve <strong>land use</strong> features</p></li>
+<li><p>For getting landuse features you need to define tags which are based on keys and values of the features - you can find the definition for then <a class="reference external" href="https://wiki.openstreetmap.org/wiki/Map_features">here</a>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tags</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;landuse&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>   
+
+<span class="n">landuse</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">features_from_place</span><span class="p">(</span><span class="n">area_name</span><span class="p">,</span> <span class="n">tags</span><span class="p">)</span>  <span class="c1">#in the OSMnx versions before 1.7.0 use ox.geometries.geometries_from_place())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-3-inspect-the-data">
+<h2>Step 3: Inspect the Data<a class="headerlink" href="#step-3-inspect-the-data" title="Permalink to this heading">#</a></h2>
+<p>Before diving into analysis, it’s important to <strong>understand what’s in the dataset</strong>.<br />
+Let’s take a closer look at the structure and contents of the downloaded OSM data.</p>
+<p>Here are some key things to check:</p>
+<p><strong>Geometry types</strong></p>
+<ul class="simple">
+<li><p>Does the dataset contain only polygons? Or are there also points or lines?</p></li>
+<li><p>If you’re only analyzing land use areas, you’ll likely want to <strong>keep only polygons</strong>.</p></li>
+</ul>
+<p><strong>Coordinate Reference System (CRS)</strong></p>
+<ul class="simple">
+<li><p>What CRS is the data using? (e.g., <code class="docutils literal notranslate"><span class="pre">EPSG:4326</span></code>)</p></li>
+<li><p>If you’re planning to measure area or distance, consider reprojecting to a <strong>projected CRS</strong> (like UTM).</p></li>
+</ul>
+<p><strong>Attribute fields and tags</strong></p>
+<ul class="simple">
+<li><p>What columns are available?</p></li>
+<li><p>Are the <code class="docutils literal notranslate"><span class="pre">landuse</span></code> tags stored in a column like <code class="docutils literal notranslate"><span class="pre">&quot;landuse&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;tags&quot;</span></code>?</p></li>
+<li><p>Print <code class="docutils literal notranslate"><span class="pre">.columns</span></code>, inspect <code class="docutils literal notranslate"><span class="pre">.head()</span></code>, or use <code class="docutils literal notranslate"><span class="pre">.info()</span></code> to explore the table.</p></li>
+</ul>
+<p><strong>Unique values in key fields</strong></p>
+<ul class="simple">
+<li><p>What land use types are represented? (<code class="docutils literal notranslate"><span class="pre">gdf[&quot;landuse&quot;].unique()</span></code> can help.)</p></li>
+<li><p>Which ones are relevant to your analysis?</p></li>
+</ul>
+</div>
+<div class="section" id="step-4-clean-the-data">
+<h2>Step 4: Clean the data<a class="headerlink" href="#step-4-clean-the-data" title="Permalink to this heading">#</a></h2>
+<p>Filter the dataset to keep only relevant land use features and polygon geometries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Keep only Polygon and MultiPolygon geometries</span>
+<span class="c1">#landuse_poly = ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-5-visualize-the-data">
+<h2>Step 5: Visualize the data<a class="headerlink" href="#step-5-visualize-the-data" title="Permalink to this heading">#</a></h2>
+<p>Plot the data to get a quick spatial overview and check if the geometries look reasonable.</p>
+<p>You can use .explore() to create an interactive map — try coloring polygons by land use type with landuse_poly.explore(column=”landuse”)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#landuse_poly.explore(column=&quot;landuse&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-6-saving-to-file-optional">
+<h2>Step 6: Saving to file (optional)<a class="headerlink" href="#step-6-saving-to-file-optional" title="Permalink to this heading">#</a></h2>
+<p>If you want you can save the data to file to continue working with it later (we will continue exploring landuse in the next modules)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#landuse_poly.to_file(&quot;path_to_file/osm_landuse.gpkg&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-7-explore-and-reflect">
+<h2>Step 7: Explore and Reflect<a class="headerlink" href="#step-7-explore-and-reflect" title="Permalink to this heading">#</a></h2>
+<p>Take a closer look at the resulting land use map for your chosen area.</p>
+<p>Ask yourself:</p>
+<ul class="simple">
+<li><p>Does the map look complete and accurate?</p></li>
+<li><p>Are all major land use types (residential, industrial, parks, etc.) represented?</p></li>
+<li><p>Are there missing areas or unexpected gaps in the data?</p></li>
+<li><p>If you’re familiar with the city or neighborhood — <strong>does the map match reality?</strong><br />
+Are certain areas mislabeled, outdated, or missing?</p></li>
+</ul>
+<p>You can also compare your results with official planning maps if available.</p>
+<p>This step is important not only for validating your data, but also for building your <strong>critical thinking</strong> as a spatial analyst.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./modules/module_1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Task - Exploring Landuse</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#suggested-workflow">Suggested Workflow</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-0-import-libraries">Step 0: Import libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-choose-an-area-of-interest">Step 1: Choose an area of interest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-download-data-from-osm-using-osmnx">Step 2: Download data from OSM using OSMnx</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-inspect-the-data">Step 3: Inspect the Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-clean-the-data">Step 4: Clean the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-visualize-the-data">Step 5: Visualize the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-saving-to-file-optional">Step 6: Saving to file (optional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-explore-and-reflect">Step 7: Explore and Reflect</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bella Mironova
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

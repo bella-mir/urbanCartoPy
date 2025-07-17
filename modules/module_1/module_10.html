@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>I. Geospatial Data &#8212; Urban Cartography</title>
+    <title>Overview - Geospatial Data &#8212; Urban Cartography</title>
   
   
   
@@ -63,7 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'modules/module_1/module_10';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="I.1 Spatial Data Models" href="module_11.html" />
+    <link rel="next" title="1 Spatial Data Models" href="module_11.html" />
     <link rel="prev" title="Python in GIS" href="../module_0/module_02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -151,7 +151,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Spatial Data Analysis and Visualisation in Urban Cartography
+                    Spatial Data Analysis in Urban Cartography
                 </a>
             </li>
         </ul>
@@ -162,10 +162,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">I. Geospatial Data</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">I. Geospatial Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_11.html">I.1 Spatial Data Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_12.html">I.2 Reading and Exploring Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_13.html">I.3 Exporting data from OSM</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Overview - Geospatial Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_11.html">1 Spatial Data Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_12.html">2. Reading and Exploring Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_13.html">3. Exporting data from OSM</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">II. Projections and Coordinate Reference Systems</span></p>
@@ -364,7 +364,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>I. Geospatial Data</h1>
+    <h1>Overview - Geospatial Data</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -375,6 +375,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-goals">Learning Goals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Learning Goals</a></li>
 </ul>
             </nav>
         </div>
@@ -386,11 +387,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="i-geospatial-data">
-<h1>I. Geospatial Data<a class="headerlink" href="#i-geospatial-data" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="overview-geospatial-data">
+<h1>Overview - Geospatial Data<a class="headerlink" href="#overview-geospatial-data" title="Permalink to this heading">#</a></h1>
 <p><strong>Data is fundamental to cartography and geospatial analysis.</strong></p>
 <p>This short course we’ll begin by exploring the nature of the data we work with. You’ll learn about spatial data models, how to read data from your local machine, how to create spatial data from coordinates, and how to work with OpenStreetMap (OSM) — one of the most popular open data sources.</p>
-<p>This lesson includes:</p>
+<p>This module includes:</p>
 <ol class="arabic">
 <li><p><a class="reference internal" href="module_11.html"><span class="doc std std-doc"><strong>Spatial Data Models</strong></span></a></p>
 <p>Learn about geometric objects — points, lines, and polygons.</p>
@@ -401,14 +402,21 @@ document.write(`
 <li><p><a class="reference internal" href="module_13.html"><span class="doc std std-doc"><strong>Exporting OSM Data</strong></span></a></p>
 <p>Learn how to access and export OpenStreetMap data directly within your Jupyter Notebook.</p>
 </li>
+<li><p><a class="reference internal" href="module_14.html"><span class="doc std std-doc"><strong>Task - Exploring Landuse</strong></span></a></p>
+<p>Time to put these skills into practice by exploring <strong>land use</strong> in a neighborhood or city you’re interested in, using OSM data.</p>
+</li>
 </ol>
 <div class="section" id="learning-goals">
 <h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="id1">
+<h2>Learning Goals<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p><strong>After this lesson, you should be able to:</strong></p>
 <ul class="simple">
-<li><p><strong>Identify the main types of geometric objects</strong> used in spatial data models, including Points, LineStrings, and Polygons, and understand their characteristics and typical use cases.</p></li>
-<li><p><strong>Create and manipulate geometric objects using the Shapely library</strong>, including how to construct geometries from scratch, combine or modify them, and perform basic spatial operations (e.g. buffering, measuring distance).</p></li>
-<li><p><strong>Read spatial coordinate data from various file formats</strong> (such as CSV or GeoJSON), extract coordinate values, and programmatically create Point geometries based on this data.</p></li>
+<li><p><strong>Understand the structure of spatial data models</strong>, including the use of Points, LineStrings, and Polygons, and explain how they represent real-world geographic features.</p></li>
+<li><p><strong>Work with GeoDataFrames in GeoPandas</strong>, including how to load, inspect, and explore spatial datasets.</p></li>
+<li><p><strong>Read and interpret spatial datasets</strong> from different formats (e.g. CSV, Shapefile, GeoJSON), and convert tabular coordinate data into geospatial formats using Point geometries.</p></li>
+<li><p><strong>Access and extract spatial data from OpenStreetMap (OSM)</strong> using the OSMnx library for specific places and tags (e.g. buildings, roads, cafés).</p></li>
 </ul>
 </div>
 </div>
@@ -458,7 +466,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">I.1 Spatial Data Models</p>
+        <p class="prev-next-title">1 Spatial Data Models</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -481,6 +489,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-goals">Learning Goals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Learning Goals</a></li>
 </ul>
   </nav></div>
 

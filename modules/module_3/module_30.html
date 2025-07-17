@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>III. Spatial Operations &#8212; Urban Cartography</title>
+    <title>Overview - Spatial Operations &#8212; Urban Cartography</title>
   
   
   
@@ -63,8 +63,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'modules/module_3/module_30';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="III.1 Basic Geoprocessing Tools" href="module_31.html" />
-    <link rel="prev" title="II.3 Measuring Areas and Distances" href="../module_2/module_23.html" />
+    <link rel="next" title="Basic Geoprocessing Tools" href="module_31.html" />
+    <link rel="prev" title="Measuring Areas and Distances" href="../module_2/module_23.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,6 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../module_0/module_00.html">Before You Begin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_0/module_01.html">Environment setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_0/module_02.html">Python in GIS</a></li>
 </ul>
@@ -164,22 +165,23 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../module_1/module_10.html">Overview - Geospatial Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_1/module_11.html">Spatial Data Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1/module_12.html">Reading and Exploring Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1/module_12.html">Reading Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_1/module_13.html">Exporting data from OSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1/module_14.html">Task - Exploring Landuse</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">II. Projections and Coordinate Reference Systems</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../module_2/module_20.html">II. Projections and Coordinates Reference Systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2/module_21.html">II.1 Introduction to Projections and Coordinate Systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2/module_22.html">II.2 Reprojecting Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2/module_23.html">II.3 Measuring Areas and Distances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2/module_20.html">Overview - Projections and CRS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2/module_21.html">Introduction to Projections and Coordinate Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2/module_22.html">Reprojecting Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2/module_23.html">Measuring Areas and Distances</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">III. Spatial Operations</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">III. Spatial Operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_31.html">III.1 Basic Geoprocessing Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_32.html">III.2 Spatial Relationships and Join</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_33.html">III.3 Spatial Aggregation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Overview - Spatial Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_31.html">Basic Geoprocessing Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_32.html">Spatial Relationships and Join</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_33.html">Spatial Aggregation</a></li>
 </ul>
 
     </div>
@@ -363,7 +365,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>III. Spatial Operations</h1>
+    <h1>Overview - Spatial Operations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,8 +387,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="iii-spatial-operations">
-<h1>III. Spatial Operations<a class="headerlink" href="#iii-spatial-operations" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="overview-spatial-operations">
+<h1>Overview - Spatial Operations<a class="headerlink" href="#overview-spatial-operations" title="Permalink to this heading">#</a></h1>
 <p><strong>Working with spatial data isn’t just about what features exist — it’s also about how they relate to each other in space.</strong></p>
 <p>In this module, you’ll explore the core spatial operations that allow you to <strong>analyze, combine, and compare</strong> geographic objects based on their shapes and locations. From checking whether geometries touch or intersect, to combining data across layers using spatial joins, this part of the course gives you powerful tools for working with real-world spatial relationships.</p>
 <p>You’ll also learn how to summarize spatial data by <strong>aggregating</strong> it by region or category — essential for creating clean, interpretable results from complex geodata.</p>
@@ -448,7 +450,7 @@ Practice grouping and summarizing spatial data — for example, calculating tota
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">II.3 Measuring Areas and Distances</p>
+        <p class="prev-next-title">Measuring Areas and Distances</p>
       </div>
     </a>
     <a class="right-next"
@@ -456,7 +458,7 @@ Practice grouping and summarizing spatial data — for example, calculating tota
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">III.1 Basic Geoprocessing Tools</p>
+        <p class="prev-next-title">Basic Geoprocessing Tools</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

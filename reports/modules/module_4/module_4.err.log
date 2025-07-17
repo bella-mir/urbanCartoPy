@@ -1,0 +1,64 @@
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/belka/Library/Python/3.10/lib/python/site-packages/nbclient/client.py", line 1265, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/belka/Library/Python/3.10/lib/python/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/Users/belka/Library/Python/3.10/lib/python/site-packages/nbclient/client.py", line 703, in async_execute
+    await self.async_execute_cell(
+  File "/Users/belka/Library/Python/3.10/lib/python/site-packages/nbclient/client.py", line 1021, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/belka/Library/Python/3.10/lib/python/site-packages/nbclient/client.py", line 915, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import requests
+
+# API OpenRouteService (требуется ключ API)
+ors_api_key = "your_key"
+url = "https://api.openrouteservice.org/v2/isochrones/foot-walking"
+
+# Параметры
+params = {
+    "locations": [[37.6173, 55.7558]], 
+    "range": [300, 600, 900],  # Изохроны в секундах (5, 10, 15 минут)
+}
+
+headers = {
+    "Authorization": ors_api_key,
+    "Content-Type": "application/json",
+}
+
+# Запрос к API
+response = requests.post(url, json=params, headers=headers)
+isochrones = response.json()
+
+
+# Преобразуем GeoJSON в GeoDataFrame
+gdf_isochrones = gpd.GeoDataFrame.from_features(
+    isochrones["features"], crs="EPSG:4326"
+)
+
+#Визуализируем результат на карте
+gdf_isochrones.explore( tiles='cartodbpositron')
+
+
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+Cell [0;32mIn[17], line 25[0m
+[1;32m     20[0m isochrones [38;5;241m=[39m response[38;5;241m.[39mjson()
+[1;32m     23[0m [38;5;66;03m# Преобразуем GeoJSON в GeoDataFrame[39;00m
+[1;32m     24[0m gdf_isochrones [38;5;241m=[39m gpd[38;5;241m.[39mGeoDataFrame[38;5;241m.[39mfrom_features(
+[0;32m---> 25[0m     [43misochrones[49m[43m[[49m[38;5;124;43m"[39;49m[38;5;124;43mfeatures[39;49m[38;5;124;43m"[39;49m[43m][49m, crs[38;5;241m=[39m[38;5;124m"[39m[38;5;124mEPSG:4326[39m[38;5;124m"[39m
+[1;32m     26[0m )
+[1;32m     28[0m [38;5;66;03m#Визуализируем результат на карте[39;00m
+[1;32m     29[0m gdf_isochrones[38;5;241m.[39mexplore( tiles[38;5;241m=[39m[38;5;124m'[39m[38;5;124mcartodbpositron[39m[38;5;124m'[39m)
+
+[0;31mKeyError[0m: 'features'
+KeyError: 'features'
+

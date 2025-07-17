@@ -1,0 +1,687 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>II.2 Reprojecting Data &#8212; Urban Cartography</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modules/module_2/module_22';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="II.3 Measuring Areas and Distances" href="module_23.html" />
+    <link rel="prev" title="II.1 Introduction to Projections and Coordinate Systems" href="module_21.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Spatial Data Analysis and Visualisation in Urban Cartography
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../module_0/module_01.html">Environment setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_0/module_02.html">Python in GIS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">I. Geospatial Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../module_1/module_10.html">I. Geospatial Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1/module_11.html">I.1 Spatial Data Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1/module_12.html">I.2 Reading and Exploring Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1/module_13.html">I.3 Exporting data from OSM</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">II. Projections and Coordinate Reference Systems</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="module_20.html">II. Projections and Coordinates Reference Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_21.html">II.1 Introduction to Projections and Coordinate Systems</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">II.2 Reprojecting Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_23.html">II.3 Measuring Areas and Distances</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">III. Spatial Operations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../module_3/module_30.html">III. Spatial Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3/module_31.html">III.1 Basic Geoprocessing Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3/module_32.html">III.2 Spatial Relationships and Join</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3/module_33.html">III.3 Spatial Aggregation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmodules/module_2/module_22.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/modules/module_2/module_22.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>II.2 Reprojecting Data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-utm">Estimating UTM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reprojecting">Reprojecting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-crs">Setting the CRS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-data-without-a-crs">For data without a CRS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-a-crs-vs-reprojecting">Setting a CRS vs. Reprojecting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-map-projection">Choosing a Map Projection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="ii-2-reprojecting-data">
+<h1>II.2 Reprojecting Data<a class="headerlink" href="#ii-2-reprojecting-data" title="Permalink to this heading">#</a></h1>
+<div class="section" id="estimating-utm">
+<h2>Estimating UTM<a class="headerlink" href="#estimating-utm" title="Permalink to this heading">#</a></h2>
+<p>When working with cities or local areas, it’s often important to reproject geographic data into a UTM zone.<br />
+Why? Because geographic coordinates (latitude and longitude) are not measured in consistent distances — one degree of longitude can mean very different lengths depending on how far you are from the equator.</p>
+<p>UTM (Universal Transverse Mercator) zones use meters instead of degrees, which makes distance, area, and direction calculations much more accurate for local-scale analysis — like city planning, infrastructure, or urban mapping.</p>
+<p>You can calculate a UTM zone yourself based on a point’s coordinates.<br />
+To find the <strong>zone number</strong>, you only need the <strong>longitude</strong>.<br />
+The <strong>latitude</strong> will tell you whether the point is in the <strong>northern</strong> or <strong>southern</strong> h</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">utm_zone</span><span class="p">(</span><span class="n">longitude</span><span class="p">):</span>
+    <span class="n">zone</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">longitude</span> <span class="o">+</span> <span class="mi">180</span><span class="p">)</span> <span class="o">/</span> <span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">zone</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>What this function does:</strong></p>
+<ul class="simple">
+<li><p>It calculates the <strong>UTM zone number</strong> based on a given <strong>longitude</strong>.</p></li>
+<li><p>The Earth is divided into <strong>60 UTM zones</strong>, each 6 degrees of longitude wide.</p></li>
+<li><p>The formula <code class="docutils literal notranslate"><span class="pre">int((longitude</span> <span class="pre">+</span> <span class="pre">180)</span> <span class="pre">/</span> <span class="pre">6)</span> <span class="pre">+</span> <span class="pre">1</span></code> shifts the longitude range from <code class="docutils literal notranslate"><span class="pre">[-180,</span> <span class="pre">+180]</span></code> to <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">360]</span></code> and then divides it by 6 to find out which zone it belongs to.</p></li>
+<li><p>The result is rounded down using <code class="docutils literal notranslate"><span class="pre">int(...)</span></code> and adjusted by <code class="docutils literal notranslate"><span class="pre">+1</span></code> because UTM zones are numbered starting from 1 (not 0).</p></li>
+</ul>
+<p>Let’s use our function to check the UTM zone number for a location at 30.33 degrees east longitude.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">longitude</span> <span class="o">=</span> <span class="mf">30.33</span>  
+<span class="n">zone</span> <span class="o">=</span> <span class="n">utm_zone</span><span class="p">(</span><span class="n">longitude</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Номер зоны UTM:&quot;</span><span class="p">,</span> <span class="n">zone</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Номер зоны UTM: 36
+</pre></div>
+</div>
+</div>
+</div>
+<p>Actually, the function above was just a fun way to practice writing code — there’s a simpler way to solve this task :)</p>
+<p>If you’re working with a dataset, you can easily find the appropriate UTM zone using the <code class="docutils literal notranslate"><span class="pre">.estimate_utm_crs()</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">admin_border</span><span class="o">.</span><span class="n">estimate_utm_crs</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">admin_border</span><span class="o">.</span><span class="n">estimate_utm_crs</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;admin_border&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="reprojecting">
+<h2>Reprojecting<a class="headerlink" href="#reprojecting" title="Permalink to this heading">#</a></h2>
+<p><strong>Reprojecting</strong> means converting spatial data from one coordinate system to another.<br />
+In practice, it means <strong>recalculating the coordinates</strong> of each point so they fit a different map projection.</p>
+<p>But before reprojecting, we need to decide which coordinate system we want to convert to.<br />
+Thanks to the <code class="docutils literal notranslate"><span class="pre">estimate_utm_crs()</span></code> method, we already know the correct CRS for our data.<br />
+Let’s save it to a separate variable so we can use it when reprojecting the dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_crs</span> <span class="o">=</span> <span class="n">admin_border</span><span class="o">.</span><span class="n">estimate_utm_crs</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To reproject the data in GeoPandas, we use the <code class="docutils literal notranslate"><span class="pre">.to_crs()</span></code> method.<br />
+This function transforms the geometry of the dataset into a new coordinate reference system (CRS).<br />
+We simply pass the target CRS (for example, the one returned by <code class="docutils literal notranslate"><span class="pre">estimate_utm_crs()</span></code>) inside the method.</p>
+<p>It recalculates all coordinate values so that the data aligns correctly in the new projection.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">admin_border_utm</span> <span class="o">=</span> <span class="n">admin_border</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">data_crs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">admin_border_utm</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EPSG:32636
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ve successfully reprojected our layer into the appropriate UTM zone.<br />
+Now, our data is in meters instead of degrees, which makes it much more suitable for performing accurate spatial analysis — such as measuring distances, calculating areas, or working with city-scale infrastructure and planning tasks.</p>
+</div>
+<div class="section" id="setting-the-crs">
+<h2>Setting the CRS<a class="headerlink" href="#setting-the-crs" title="Permalink to this heading">#</a></h2>
+<div class="section" id="for-data-without-a-crs">
+<h3>For data without a CRS<a class="headerlink" href="#for-data-without-a-crs" title="Permalink to this heading">#</a></h3>
+<p>Sometimes we encounter spatial data that doesn’t have a defined coordinate reference system (CRS).<br />
+Let’s look at an example using a CSV file with theater locations in Saint Petersburg.</p>
+<p>We’ll read the data and create a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> from it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theaters</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/spb_theaters.csv&#39;</span><span class="p">)</span>
+<span class="n">theaters</span><span class="p">[[</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">theaters</span><span class="p">[</span><span class="s1">&#39;coord&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">theaters_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">theaters</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">theaters</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">],</span> <span class="n">theaters</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check the coordinate reference system of <code class="docutils literal notranslate"><span class="pre">theaters_gdf</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">theaters_gdf</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is <code class="docutils literal notranslate"><span class="pre">None</span></code> — that’s because we didn’t set a CRS when creating the <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>.<br />
+But sometimes, we simply receive data that comes without a defined CRS.</p>
+<p>In such cases, we can assign a CRS using one of two approaches:</p>
+<ul class="simple">
+<li><p><strong>Option 1:</strong> Use the <code class="docutils literal notranslate"><span class="pre">.set_crs()</span></code> method</p></li>
+<li><p><strong>Option 2:</strong> Directly assign the CRS using the <code class="docutils literal notranslate"><span class="pre">.crs</span></code> attribute</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theaters_gdf</span> <span class="o">=</span> <span class="n">theaters_gdf</span><span class="o">.</span><span class="n">set_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">4326</span><span class="p">)</span> <span class="c1"># вариант 1</span>
+
+<span class="n">theaters_gdf</span><span class="o">.</span><span class="n">crs</span> <span class="o">=</span> <span class="s2">&quot;EPSG:4326&quot;</span> <span class="c1"># вариант 2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">theaters_gdf</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="setting-a-crs-vs-reprojecting">
+<h3>Setting a CRS vs. Reprojecting<a class="headerlink" href="#setting-a-crs-vs-reprojecting" title="Permalink to this heading">#</a></h3>
+<p><strong>Reprojecting</strong> means converting coordinates from one CRS to another — it changes both the CRS and the actual coordinate values of all geometries in the dataset.</p>
+<p>In contrast, when we <strong>set a CRS</strong>, no coordinate transformation takes place. We’re simply assigning a CRS label to the existing data, telling GeoPandas how to interpret the coordinates that are already there.</p>
+<p>⚠️ It’s important to know what CRS the coordinates are originally in.<br />
+If you assign the wrong CRS, your data might appear in the wrong part of the world — sometimes even on the wrong continent!</p>
+</div>
+</div>
+<div class="section" id="choosing-a-map-projection">
+<h2>Choosing a Map Projection<a class="headerlink" href="#choosing-a-map-projection" title="Permalink to this heading">#</a></h2>
+<p>One of the most commonly used projections for GIS projects focused on urban or local-scale data is the <strong>Universal Transverse Mercator (UTM)</strong> projection.<br />
+It provides accurate distance and area measurements within each zone, making it ideal for city-level mapping and analysis.</p>
+<p>For smaller scales — such as mapping all of Russia or the entire world — choosing the right projection becomes more complex.<br />
+It largely depends on the geographic extent of your data and the specific goals of your project.</p>
+<p>A great resource for understanding map projections is the classic 1987 book<br />
+<strong><a class="reference external" href="https://pubs.usgs.gov/pp/1395/report.pdf">Map Projections – A Working Manual</a></strong> 📕.<br />
+It offers detailed explanations of different projection types, their characteristics, history, and practical use cases.</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./modules/module_2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="module_21.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">II.1 Introduction to Projections and Coordinate Systems</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="module_23.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">II.3 Measuring Areas and Distances</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-utm">Estimating UTM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reprojecting">Reprojecting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-crs">Setting the CRS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-data-without-a-crs">For data without a CRS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-a-crs-vs-reprojecting">Setting a CRS vs. Reprojecting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-map-projection">Choosing a Map Projection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bella Mironova
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

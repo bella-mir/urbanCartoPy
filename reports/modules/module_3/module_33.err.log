@@ -1,0 +1,37 @@
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/belka/Library/Python/3.10/lib/python/site-packages/nbclient/client.py", line 1265, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/belka/Library/Python/3.10/lib/python/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/Users/belka/Library/Python/3.10/lib/python/site-packages/nbclient/client.py", line 703, in async_execute
+    await self.async_execute_cell(
+  File "/Users/belka/Library/Python/3.10/lib/python/site-packages/nbclient/client.py", line 1021, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/belka/Library/Python/3.10/lib/python/site-packages/nbclient/client.py", line 915, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+#Запишем в переменную название изучаемого района 
+area = "Центральный район, Санкт-Петербург"
+
+# Получаем границу района с помощью номинального геокодирования
+admin_polygon = ox.geocode_to_gdf(area)
+print("Исходная CRS:", admin_polygon.crs)
+
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[1], line 5[0m
+[1;32m      2[0m area [38;5;241m=[39m [38;5;124m"[39m[38;5;124mЦентральный район, Санкт-Петербург[39m[38;5;124m"[39m
+[1;32m      4[0m [38;5;66;03m# Получаем границу района с помощью номинального геокодирования[39;00m
+[0;32m----> 5[0m admin_polygon [38;5;241m=[39m [43mox[49m[38;5;241m.[39mgeocode_to_gdf(area)
+[1;32m      6[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mИсходная CRS:[39m[38;5;124m"[39m, admin_polygon[38;5;241m.[39mcrs)
+
+[0;31mNameError[0m: name 'ox' is not defined
+NameError: name 'ox' is not defined
+

@@ -5,3 +5,10 @@ body {
   font-size: 16px;
   line-height: 1.6;
 }
+
+h1,
+h2,
+h3 {
+  color: #2a4d8f; /* твой брендовый цвет */
+  font-weight: 600;
+}

@@ -25,6 +25,7 @@ parts:
       - file: modules/module_2/module_21
       - file: modules/module_2/module_22
       - file: modules/module_2/module_23
+      - file: modules/module_2/module_24
 
   - caption: III. Spatial Operations
     chapters:

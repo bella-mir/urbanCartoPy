@@ -5,13 +5,30 @@ root: intro
 parts:
   - caption: Getting Started
     chapters:
-      - file: modules/module_0
+      - file: modules/module_0/module_00
+      - file: modules/module_0/module_01
+      - file: modules/module_0/module_02
 
-  - caption: Modules
+  - caption: I. Geospatial Data
     chapters:
-      - file: modules/module_1
-      - file: modules/module_2
-      - file: modules/module_3
-      - file: modules/module_4
-      - file: modules/module_5
+      - file: modules/module_1/module_10
+      - file: modules/module_1/module_11
+      - file: modules/module_1/module_12
+      - file: modules/module_1/module_13
+      - file: modules/module_1/module_14
+
+  - caption: II. Projections and Coordinate Reference Systems
+    chapters:
+      - file: modules/module_2/module_20
+      - file: modules/module_2/module_21
+      - file: modules/module_2/module_22
+      - file: modules/module_2/module_23
+
+  - caption: III. Spatial Operations
+    chapters:
+      - file: modules/module_3/module_30
+      - file: modules/module_3/module_31
+      - file: modules/module_3/module_32
+      - file: modules/module_3/module_33
+
 

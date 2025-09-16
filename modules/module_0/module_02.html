@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python in GIS &#8212; Urban Cartography</title>
+    <title>Environment setup &#8212; Urban Cartography</title>
   
   
   
@@ -63,8 +63,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'modules/module_0/module_02';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Overview - Geospatial Data" href="../module_1/module_10.html" />
-    <link rel="prev" title="Environment setup" href="module_01.html" />
+    <link rel="next" title="Python in GIS" href="module_03.html" />
+    <link rel="prev" title="Project Overview: 15-Minute City" href="module_01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -158,8 +158,9 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="module_00.html">Before You Begin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_01.html">Environment setup</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python in GIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_01.html">Project Overview: 15-Minute City</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Environment setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_03.html">Python in GIS</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">I. Geospatial Data</span></p>
 <ul class="nav bd-sidenav">
@@ -365,7 +366,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Python in GIS</h1>
+    <h1>Environment setup</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -375,9 +376,51 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning Outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references-and-useful-links">References and useful links</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyer-notebook">Jupyer Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-environments-for-jupyter-notebook">Working Environments for Jupyter Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook-in-visual-studio-code-vs-code">1. Jupyter Notebook in Visual Studio Code (VS Code)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-required-tools">1. Installing the Required Tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#install-vs-code">1.1. Install VS Code</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#install-python">1.2. Install Python</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#install-the-jupyter-extension-for-vs-code">1.3. Install the Jupyter Extension for VS Code</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-working-directory-and-creating-a-new-notebook">2. Setting Up Your Working Directory and Creating a New Notebook</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environments">3. Virtual Environments</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-features">4. Basic Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#running-cells">4.1. Running Cells</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-libraries">4.2. Installing Libraries</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#helpful-tips">Helpful Tips</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-jupyter-notebook-in-google-colab">II. Jupyter Notebook in Google Colab</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-google-colab">1. Opening Google Colab</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-a-ipynb-file">2. Uploading a .ipynb File</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3. Basic Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.1. Running Cells</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.2. Installing Libraries</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-data">3.3. Uploading Data</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-your-work">4. Saving Your Work</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-jupyter-notebook-with-anaconda">III. Jupyter Notebook with Anaconda</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-anaconda">1. Installing Anaconda</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-jupyter-notebook-via-anaconda">2. Opening Jupyter Notebook via Anaconda#</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-notebook">3. Creating a New Notebook#</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-virtual-environments-in-anaconda">4. Managing Virtual Environments in Anaconda</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5. Basic Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.1. Running Cells</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6. Saving Your Work</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -389,53 +432,268 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="python-in-gis">
-<h1>Python in GIS<a class="headerlink" href="#python-in-gis" title="Permalink to this heading">#</a></h1>
-<div class="section" id="why-python">
-<h2>Why Python?<a class="headerlink" href="#why-python" title="Permalink to this heading">#</a></h2>
-<p>Python helps automate routine data processing tasks, but most importantly, it opens up incredible possibilities for analysis and visualization. It also <strong>democratizes access to data analysis</strong> and offers many advantages:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="environment-setup">
+<h1>Environment setup<a class="headerlink" href="#environment-setup" title="Permalink to this heading">#</a></h1>
+<p>Here’s a quick guide to getting started with Python for spatial data analysis – just one of many ways to do it. We’ll look at two code editors we recommend for this course, how to set up a virtual environment, and how to organize your files.</p>
+<p>If you already have your own setup (like running Jupyter Notebook through Anaconda), you can totally skip this part</p>
+<div class="section" id="jupyer-notebook">
+<h2>Jupyer Notebook<a class="headerlink" href="#jupyer-notebook" title="Permalink to this heading">#</a></h2>
+<p><strong>Jupyter Notebook</strong> is an interactive tool where you can create and share documents that include code, text, images, and more. It lets you write and run code in individual cells, which makes data analysis more flexible and user-friendly. Jupyter supports many programming languages, like Python, R, and Julia.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" width="200" height="200" />
+</div>
+<div class="section" id="working-environments-for-jupyter-notebook">
+<h2>Working Environments for Jupyter Notebook<a class="headerlink" href="#working-environments-for-jupyter-notebook" title="Permalink to this heading">#</a></h2>
+<p>We will go over three of the most popular options for working with Jupyter Notebook:</p>
 <ol class="arabic simple">
-<li><p><strong>It is free and open-source</strong> – accessible to everyone without expensive licenses.</p></li>
-<li><p><strong>It is highly flexible</strong> and supports a wide range of applications and data formats.</p></li>
-<li><p><strong>Using Jupyter Notebooks makes your work reproducible</strong> and easy to share with others.</p></li>
-<li><p><strong>You can automate routine workflows</strong>, saving time and reducing manual errors.</p></li>
-<li><p><strong>You gain a deeper understanding</strong> of how spatial data is structured and how geoprocessing operations work.</p></li>
+<li><p><strong>Visual Studio Code (VS Code)</strong> – a versatile code editor with Jupyter support via extensions</p></li>
+<li><p><strong>Google Colab</strong> – a free cloud-based platform that runs in your browser</p></li>
+<li><p><strong>Anaconda</strong> – a Python distribution that includes Jupyter Notebook and many pre-installed libraries</p></li>
+</ol>
+<p>The video tutorials included in this course will use <a href="https://code.visualstudio.com" target="_blank">Visual Studio Code (VS Code)</a>, but you are welcome to choose whichever platform you prefer.</p>
+<p><strong>VS Code</strong> is a lightweight yet powerful text editor developed by Microsoft. It supports a wide range of programming languages, including JavaScript, Python, HTML/CSS, Java, and C++. I personally love VS Code for its versatility and the huge number of extensions available – two of which we will definitely be using in this course!</p>
+<div class="section" id="jupyter-notebook-in-visual-studio-code-vs-code">
+<h3>1. Jupyter Notebook in Visual Studio Code (VS Code)<a class="headerlink" href="#jupyter-notebook-in-visual-studio-code-vs-code" title="Permalink to this heading">#</a></h3>
+<img src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png" width="200" height="200" />
+<div class="section" id="installing-the-required-tools">
+<h4>1. Installing the Required Tools<a class="headerlink" href="#installing-the-required-tools" title="Permalink to this heading">#</a></h4>
+<div class="section" id="install-vs-code">
+<h5>1.1. Install VS Code<a class="headerlink" href="#install-vs-code" title="Permalink to this heading">#</a></h5>
+<ol class="arabic simple">
+<li><p>Download it from the official website: <a class="reference external" href="https://code.visualstudio.com">https://code.visualstudio.com</a>.</p></li>
+<li><p>Run the installer and follow the instructions.</p></li>
 </ol>
 </div>
-<div class="section" id="learning-outcomes">
-<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this heading">#</a></h2>
-<p>By the end of this course, you will be able to:</p>
+<div class="section" id="install-python">
+<h5>1.2. Install Python<a class="headerlink" href="#install-python" title="Permalink to this heading">#</a></h5>
+<p>You probably already have it installed, but if not:</p>
+<ol class="arabic simple">
+<li><p>Download Python (version 3.8+ recommended): <a class="reference external" href="https://www.python.org/downloads">https://www.python.org/downloads</a>.</p></li>
+<li><p>In the installer, make sure to <strong>check the box</strong> for <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Python</span> <span class="pre">to</span> <span class="pre">PATH</span></code>.</p></li>
+</ol>
+</div>
+<div class="section" id="install-the-jupyter-extension-for-vs-code">
+<h5>1.3. Install the Jupyter Extension for VS Code<a class="headerlink" href="#install-the-jupyter-extension-for-vs-code" title="Permalink to this heading">#</a></h5>
+<ol class="arabic simple">
+<li><p>Open VS Code.</p></li>
+<li><p>Go to the <strong>Extensions</strong> tab (Ctrl+Shift+X).</p></li>
+<li><p>Search for <strong>“Jupyter”</strong> (by Microsoft) and install it.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="setting-up-your-working-directory-and-creating-a-new-notebook">
+<h4>2. Setting Up Your Working Directory and Creating a New Notebook<a class="headerlink" href="#setting-up-your-working-directory-and-creating-a-new-notebook" title="Permalink to this heading">#</a></h4>
+<p>To keep your course work organized, I recommend creating a dedicated directory for all projects and exercises.</p>
+<ol class="arabic simple">
+<li><p>Create an empty folder anywhere on your computer.</p></li>
+<li><p>Open it in VS Code (File → Open Folder or drag and drop the folder into VS Code).</p></li>
+<li><p>In the Explorer window, right-click → New File → Enter a name with the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> extension.</p></li>
+<li><p>Open the newly created file.</p></li>
+</ol>
+</div>
+<div class="section" id="virtual-environments">
+<h4>3. Virtual Environments<a class="headerlink" href="#virtual-environments" title="Permalink to this heading">#</a></h4>
+<p>To isolate dependencies, it’s recommended to set up a virtual environment where all libraries will be installed. To do this:</p>
+<ol class="arabic simple">
+<li><p>Open the terminal (Terminal → New Terminal).</p></li>
+<li><p>Run the following commands one by one:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>myenv<span class="w">      </span><span class="c1"># Create the environment</span>
+<span class="nb">source</span><span class="w"> </span>myenv/bin/activate<span class="w"> </span><span class="c1"># Activate (Linux/Mac)</span>
+myenv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate<span class="w">    </span><span class="c1"># Activate (Windows)</span>
+</pre></div>
+</div>
+<p>You will then be able to select this environment for your work.</p>
+</div>
+<div class="section" id="basic-features">
+<h4>4. Basic Features<a class="headerlink" href="#basic-features" title="Permalink to this heading">#</a></h4>
+<div class="section" id="running-cells">
+<h5>4.1. Running Cells<a class="headerlink" href="#running-cells" title="Permalink to this heading">#</a></h5>
 <ul class="simple">
-<li><p><strong>Understand</strong> the fundamental concepts, skills, and tools for spatial data analysis using Python.</p></li>
-<li><p>Gain an overview of practical Python libraries commonly used in <strong>scientific and professional urban data analysis and visualization</strong>.</p></li>
-<li><p>Apply Python to solve common spatial data analysis tasks within <strong>real-world urban projects</strong>.</p></li>
-<li><p>Conduct and automate standard GIS-related tasks while ensuring <strong>clear, reproducible documentation</strong> of your methods.</p></li>
-<li><p>Complete an integrated <strong>project assessing a city’s accessibility within the 15-minute city concept</strong>, combining all the skills learned throughout the course</p></li>
+<li><p><strong>Run a cell</strong>: <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code></p></li>
+<li><p><strong>Add a cell</strong>:</p>
+<ul>
+<li><p>Code: click <code class="docutils literal notranslate"><span class="pre">+</span></code> on the toolbar or press <code class="docutils literal notranslate"><span class="pre">Ctrl+M</span> <span class="pre">B</span></code></p></li>
+<li><p>Text (Markdown): <code class="docutils literal notranslate"><span class="pre">Ctrl+M</span> <span class="pre">M</span></code></p></li>
 </ul>
-<p>Specifically, you will be able to do using Python:</p>
-<ul class="simple">
-<li><p>Read and write spatial data in various <strong>vector and raster formats</strong>.</p></li>
-<li><p>Work confidently with <strong>coordinate systems and projections</strong>.</p></li>
-<li><p>Perform geometric operation</p></li>
-<li><p>Perform basic <strong>spatial analyses and data processing</strong>.</p></li>
-<li><p>Visualize your data effectively and create <strong>interactive maps</strong>.</p></li>
+</li>
 </ul>
 </div>
-<div class="section" id="references-and-useful-links">
-<h2>References and useful links<a class="headerlink" href="#references-and-useful-links" title="Permalink to this heading">#</a></h2>
-<p>While working on this course, we also reviewed some other available courses on spatial analysis using Python. They can help broaden your skills, and we are providing all the links below</p>
-<p>Python Basics</p>
+<div class="section" id="installing-libraries">
+<h5>4.2. Installing Libraries<a class="headerlink" href="#installing-libraries" title="Permalink to this heading">#</a></h5>
+<ol class="arabic simple">
+<li><p>Open the <strong>terminal</strong> in VS Code (Ctrl+`).</p></li>
+<li><p>Type:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>numpy<span class="w"> </span>matplotlib<span class="w"> </span>osmnx<span class="w"> </span>geopandas
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="helpful-tips">
+<h4>Helpful Tips<a class="headerlink" href="#helpful-tips" title="Permalink to this heading">#</a></h4>
+<p><em>(Documentation: <a class="reference external" href="https://code.visualstudio.com/docs/python/jupyter-support">Jupyter in VS Code</a>)</em></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://courses.spatialthoughts.com/python-foundation.html">Python Foundation for Spatial Analysis</a></p></li>
-<li><p><a class="reference external" href="https://geo-python-site.readthedocs.io/en/latest/">Geo-Python</a></p></li>
+<li><p><strong>Keyboard shortcuts</strong>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">/</span></code> — comment/uncomment code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">Up/Down</span></code> — move a cell up or down</p></li>
 </ul>
-<p>Spatial Data and Python</p>
+</li>
+<li><p>If the kernel is unresponsive:</p>
+<ul>
+<li><p>Restart it via <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span> <span class="pre">→</span> <span class="pre">Jupyter:</span> <span class="pre">Restart</span> <span class="pre">Kernel</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>That’s it!</strong> You’re now ready to work with Jupyter Notebook in VS Code.</p>
+</div>
+</div>
+<div class="section" id="ii-jupyter-notebook-in-google-colab">
+<h3>II. Jupyter Notebook in Google Colab<a class="headerlink" href="#ii-jupyter-notebook-in-google-colab" title="Permalink to this heading">#</a></h3>
+<img src="https://colab.research.google.com/img/colab_favicon_256px.png" width="100" height="100" />
+<p>Google Colab is a free cloud-based platform for working with Jupyter Notebooks. It doesn’t require you to install Python on your computer and lets you run code directly in your browser.</p>
+<div class="section" id="opening-google-colab">
+<h4>1. Opening Google Colab<a class="headerlink" href="#opening-google-colab" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Go to: <a class="reference external" href="https://colab.research.google.com">https://colab.research.google.com</a></p></li>
+<li><p>Sign in with your Google account (if you aren’t already logged in)</p></li>
+<li><p>Click <strong>“New Notebook”</strong> (File → New Notebook)</p></li>
+</ol>
+</div>
+<div class="section" id="uploading-a-ipynb-file">
+<h4>2. Uploading a .ipynb File<a class="headerlink" href="#uploading-a-ipynb-file" title="Permalink to this heading">#</a></h4>
+<p>If you already have a Jupyter Notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>), you can upload it:</p>
+<p>Method 1:</p>
+<ol class="arabic simple">
+<li><p>Click <strong>“File”</strong> → <strong>“Upload notebook”</strong></p></li>
+<li><p>Select the file from your computer</p></li>
+</ol>
+<p>Method 2:</p>
+<ol class="arabic simple">
+<li><p>Upload the file to Google Drive</p></li>
+<li><p>Right-click on it → “Open with” → “Google Colab”</p></li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h4>3. Basic Features<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<div class="section" id="id2">
+<h5>3.1. Running Cells<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h5>
 <ul class="simple">
-<li><p><a class="reference external" href="https://kodu.ut.ee/~kmoch/geopython2023/">GeoSpatial Analysis with Python and R</a></p></li>
-<li><p><a class="reference external" href="https://uwgda-jupyterbook.readthedocs.io/en/latest/intro.html">Geospatial Data Analysis with Python</a></p></li>
-<li><p><a class="reference external" href="https://courses.spatialthoughts.com/python-dataviz.html">Mapping and Data Visualization with Python</a></p></li>
-<li><p><a class="reference external" href="https://geographicdata.science/book/intro.html">Geographic Data Science with Python</a></p></li>
+<li><p>Run a cell: ▶️ or <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code></p></li>
+<li><p>Add a cell:</p>
+<ul>
+<li><p>Code: <code class="docutils literal notranslate"><span class="pre">+Code</span></code> or <code class="docutils literal notranslate"><span class="pre">Ctrl+M</span> <span class="pre">B</span></code></p></li>
+<li><p>Text (Markdown): <code class="docutils literal notranslate"><span class="pre">+Text</span></code> or <code class="docutils literal notranslate"><span class="pre">Ctrl+M</span> <span class="pre">M</span></code></p></li>
 </ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h5>3.2. Installing Libraries<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h5>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install pandas numpy matplotlib osmnx geopandas
+</pre></div>
+</div>
+<p>(The <code class="docutils literal notranslate"><span class="pre">!</span></code> at the beginning runs the command in the terminal)</p>
+</div>
+<div class="section" id="uploading-data">
+<h5>3.3. Uploading Data<a class="headerlink" href="#uploading-data" title="Permalink to this heading">#</a></h5>
+<p><strong>From the web:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://example.com/data.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>From your computer:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+<span class="n">uploaded</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="saving-your-work">
+<h4>4. Saving Your Work<a class="headerlink" href="#saving-your-work" title="Permalink to this heading">#</a></h4>
+<p><strong>To Google Drive:</strong></p>
+<ol class="arabic simple">
+<li><p>File → Save a copy in Drive</p></li>
+</ol>
+<p><strong>To your computer:</strong></p>
+<ol class="arabic simple">
+<li><p>File → Download → .ipynb (or .py)</p></li>
+</ol>
+<p><strong>That’s it!</strong> You’re now ready to work effectively with Jupyter Notebooks in Google Colab.</p>
+</div>
+</div>
+<div class="section" id="iii-jupyter-notebook-with-anaconda">
+<h3>III. Jupyter Notebook with Anaconda<a class="headerlink" href="#iii-jupyter-notebook-with-anaconda" title="Permalink to this heading">#</a></h3>
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Anaconda_Logo.svg/2880px-Anaconda_Logo.svg.png"  height="100" />
+<p>Anaconda is a free and open-source distribution of Python and R that simplifies package management and deployment. It comes pre-installed with many popular data science libraries and includes tools like Jupyter Notebook, making it easy to get started quickly.</p>
+<div class="section" id="installing-anaconda">
+<h4>1. Installing Anaconda<a class="headerlink" href="#installing-anaconda" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Go to the official website: <a class="reference external" href="https://www.anaconda.com">https://www.anaconda.com</a></p></li>
+<li><p>Download the installer for your operating system (Windows, macOS, or Linux).</p></li>
+<li><p>Run the installer and follow the instructions.</p></li>
+<li><p>After installation, restart your computer if prompted.</p></li>
+</ol>
+</div>
+<div class="section" id="opening-jupyter-notebook-via-anaconda">
+<h4>2. Opening Jupyter Notebook via Anaconda#<a class="headerlink" href="#opening-jupyter-notebook-via-anaconda" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Open <strong>Anaconda Navigator</strong> (you can find it in your applications or start menu).</p></li>
+<li><p>In the Navigator window, find <strong>Jupyter Notebook</strong> and click <strong>“Launch”</strong>.</p></li>
+<li><p>A new tab will open in your default browser, showing the Jupyter Notebook interface.</p></li>
+</ol>
+</div>
+<div class="section" id="creating-a-new-notebook">
+<h4>3. Creating a New Notebook#<a class="headerlink" href="#creating-a-new-notebook" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>In the Jupyter Notebook browser tab, navigate to the folder where you want to store your notebook.</p></li>
+<li><p>Click <strong>“New”</strong> in the top-right corner and select <strong>Python 3 (ipykernel)</strong>.</p></li>
+<li><p>A new notebook will open in a separate tab, ready for you to write and run code.</p></li>
+</ol>
+</div>
+<div class="section" id="managing-virtual-environments-in-anaconda">
+<h4>4. Managing Virtual Environments in Anaconda<a class="headerlink" href="#managing-virtual-environments-in-anaconda" title="Permalink to this heading">#</a></h4>
+<p>Although Anaconda manages environments by default, you can create a dedicated environment for your project to keep dependencies organized.</p>
+<ol class="arabic simple">
+<li><p>Open <strong>Anaconda Navigator</strong>.</p></li>
+<li><p>Go to the <strong>Environments</strong> tab on the left sidebar.</p></li>
+<li><p>Click <strong>“Create”</strong>, enter a name for your environment, and select Python version (e.g., 3.8 or higher).</p></li>
+<li><p>Click <strong>“Create”</strong> to finish.</p></li>
+<li><p>To install additional packages, select your environment, click <strong>“Open Terminal”</strong>, and run:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>numpy<span class="w"> </span>matplotlib<span class="w"> </span>osmnx<span class="w"> </span>geopandas
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>5. Basic Features<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<div class="section" id="id5">
+<h5>5.1. Running Cells<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Run a cell: <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code></p></li>
+<li><p>Add a cell:</p>
+<ul>
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">+</span></code> button in the toolbar</p></li>
+<li><p>Or use shortcuts:</p>
+<ul>
+<li><p>Code cell: <code class="docutils literal notranslate"><span class="pre">Esc</span> <span class="pre">+</span> <span class="pre">B</span></code></p></li>
+<li><p>Markdown cell: after adding, switch to Markdown via the dropdown menu</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id6">
+<h4>6. Saving Your Work<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Click <strong>File → Save and Checkpoint</strong> to save your notebook within Jupyter.</p></li>
+<li><p>To download it to your computer, click <strong>File → Download as → Notebook (.ipynb)</strong>.</p></li>
+</ul>
+<p><strong>That’s it!</strong> You’re now ready to work with Jupyter Notebooks using Anaconda.</p>
+</div>
+</div>
 </div>
 </div>
 
@@ -476,15 +734,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Environment setup</p>
+        <p class="prev-next-title">Project Overview: 15-Minute City</p>
       </div>
     </a>
     <a class="right-next"
-       href="../module_1/module_10.html"
+       href="module_03.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Overview - Geospatial Data</p>
+        <p class="prev-next-title">Python in GIS</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -506,9 +764,51 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning Outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references-and-useful-links">References and useful links</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyer-notebook">Jupyer Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-environments-for-jupyter-notebook">Working Environments for Jupyter Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook-in-visual-studio-code-vs-code">1. Jupyter Notebook in Visual Studio Code (VS Code)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-required-tools">1. Installing the Required Tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#install-vs-code">1.1. Install VS Code</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#install-python">1.2. Install Python</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#install-the-jupyter-extension-for-vs-code">1.3. Install the Jupyter Extension for VS Code</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-working-directory-and-creating-a-new-notebook">2. Setting Up Your Working Directory and Creating a New Notebook</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environments">3. Virtual Environments</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-features">4. Basic Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#running-cells">4.1. Running Cells</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-libraries">4.2. Installing Libraries</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#helpful-tips">Helpful Tips</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-jupyter-notebook-in-google-colab">II. Jupyter Notebook in Google Colab</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-google-colab">1. Opening Google Colab</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-a-ipynb-file">2. Uploading a .ipynb File</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3. Basic Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.1. Running Cells</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.2. Installing Libraries</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-data">3.3. Uploading Data</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-your-work">4. Saving Your Work</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-jupyter-notebook-with-anaconda">III. Jupyter Notebook with Anaconda</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-anaconda">1. Installing Anaconda</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-jupyter-notebook-via-anaconda">2. Opening Jupyter Notebook via Anaconda#</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-notebook">3. Creating a New Notebook#</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-virtual-environments-in-anaconda">4. Managing Virtual Environments in Anaconda</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5. Basic Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.1. Running Cells</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6. Saving Your Work</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

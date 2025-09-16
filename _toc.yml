@@ -8,6 +8,8 @@ parts:
       - file: modules/module_0/module_00
       - file: modules/module_0/module_01
       - file: modules/module_0/module_02
+      - file: modules/module_0/module_03
+
 
   - caption: I. Geospatial Data
     chapters:

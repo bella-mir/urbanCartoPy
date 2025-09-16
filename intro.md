@@ -2,11 +2,9 @@
 
 ## What You’ll Create & Learn
 
-In this [course](https://bella-mir.github.io/urbanCartoPy/intro.html), you will apply basic programming skills to analyze and visualize the urban environment. Through hands-on tasks, you’ll explore fundamental cartographic concepts and become familiar with libraries for geospatial data analysis and visualization.
+In this [course](https://bella-mir.github.io/urbanCartoPy/intro.html), you will apply basic programming skills to analyze and visualize urban environment. Through hands-on tasks, you’ll explore fundamental GIS and cartographic concepts and become familiar with Python libraries for geospatial data analysis and visualization.
 
-Each topic covers a specific concept in GIS and Cartography and is focused on solving a particular task in urban data analysis.
-
-The final project of the course will combine all the skills you have learned throughout the course and apply them to assessing a city's accessibility within the 15-minute city concept, as well as creating interactive maps to visualize your findings.
+The course is divided into modules, each covering core topics and including an assignment. These assignments are not just technical exercises, but they are parts of a larger course project. In o case, you will assess a city’s accessibility within the 15-minute city framework and create interactive maps to visualize your findings.
 
 ## For Whom This Course is Intended
 
@@ -19,14 +17,14 @@ The course consists of a set of Jupyter notebooks (combined into a Jupyter Book)
 
 The course is accompanied by short videos explaining key concepts.
 
-It is self-paced with approximately 10–12 hours of content.
+It is self-paced with approximately 12–15 hours of content.
 
-At the start and at the end of each module, you may be asked to participate in a short survey to help assess your skills and competencies before and after completing the module. Additionally, you may be asked to submit the results of the tasks (optional). It will help to make the next iterations of the course better.
+At the start and at the end of each module, you may be asked to participate in a short survey to help assess your knowlwge and skills. Additionally, you may be asked to submit the results of the tasks (optional). It will help to make the next iterations of the course better.
 
 ## Quick Facts
 
 - **Format:** Online, hands-on projects
-- **Length:** Self-paced with approximately 10-12 hours of content
+- **Length:** Self-paced with approximately 12-15 hours of content
 - **Prerequisites:** This course does not cover Python basics. If you're new to Python, please complete an introductory course before starting this one.
 
 ## Other information

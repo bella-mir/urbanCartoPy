@@ -27,6 +27,10 @@ At the start and at the end of each module, you may be asked to participate in a
 - **Length:** Self-paced with approximately 12-15 hours of content
 - **Prerequisites:** This course does not cover Python basics. If you're new to Python, please complete an introductory course before starting this one.
 
+## Peer Support Chat
+
+This is a self-paced course with no formal tutor support, but you can still get peer support in a [telegram chat](https://t.me/+ItyNkR2jEZxiNzQy)
+
 ## Other information
 
 This course is part of a master’s thesis by Bella Mironova within the [Erasmus Mundus Master Programme in Cartography](https://cartographymaster.eu/) (2025), under the supervision of Georg Gartner and Juliane Cron.

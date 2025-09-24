@@ -32,7 +32,7 @@ parts:
       - file: modules/module_3/module_30
       - file: modules/module_3/module_31
       - file: modules/module_3/module_32
-      # - file: modules/module_3/module_33
+      - file: modules/module_3/module_33
       - file: modules/module_3/module_34
 
 

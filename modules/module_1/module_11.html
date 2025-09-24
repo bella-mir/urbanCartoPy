@@ -34,7 +34,6 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -184,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../module_3/module_30.html">Overview - Spatial Operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_3/module_31.html">Basic Geoprocessing Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_3/module_32.html">Spatial Relationships and Join</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3/module_33.html">Spatial Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3/module_34.html">Task - Service Accessibility</a></li>
 </ul>
 
     </div>
@@ -239,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/bella-mir/urbanCartoPy" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -256,7 +255,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmodules/module_1/module_11.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/bella-mir/urbanCartoPy/issues/new?title=Issue%20on%20page%20%2Fmodules/module_1/module_11.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -578,7 +577,7 @@ To make sure it works correctly, you need to have the following libraries instal
             &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
             &lt;style&gt;
-                #map_c71258b718c0cf7530d0c549d6ea6b6e {
+                #map_a480f00dd604002e9df7ea2653f93fb0 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -608,14 +607,14 @@ To make sure it works correctly, you need to have the following libraries instal
 &lt;body&gt;
     
     
-            &lt;div class=&quot;folium-map&quot; id=&quot;map_c71258b718c0cf7530d0c549d6ea6b6e&quot; &gt;&lt;/div&gt;
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_a480f00dd604002e9df7ea2653f93fb0&quot; &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_c71258b718c0cf7530d0c549d6ea6b6e = L.map(
-                &quot;map_c71258b718c0cf7530d0c549d6ea6b6e&quot;,
+            var map_a480f00dd604002e9df7ea2653f93fb0 = L.map(
+                &quot;map_a480f00dd604002e9df7ea2653f93fb0&quot;,
                 {
                     center: [48.198942, 16.36736],
                     crs: L.CRS.EPSG3857,
@@ -624,77 +623,77 @@ To make sure it works correctly, you need to have the following libraries instal
                     preferCanvas: false,
                 }
             );
-            L.control.scale().addTo(map_c71258b718c0cf7530d0c549d6ea6b6e);
+            L.control.scale().addTo(map_a480f00dd604002e9df7ea2653f93fb0);
 
             
 
         
     
-            var tile_layer_d6b1c3016fba49cc5066a58e5da0a25b = L.tileLayer(
+            var tile_layer_f318e60ed9f4adb1886d6ad2bea025b6 = L.tileLayer(
                 &quot;https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png&quot;,
                 {&quot;attribution&quot;: &quot;\u0026copy; \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot;\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\&quot;https://carto.com/attributions\&quot;\u003eCARTO\u003c/a\u003e&quot;, &quot;detectRetina&quot;: false, &quot;maxNativeZoom&quot;: 20, &quot;maxZoom&quot;: 20, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}
-            ).addTo(map_c71258b718c0cf7530d0c549d6ea6b6e);
+            ).addTo(map_a480f00dd604002e9df7ea2653f93fb0);
         
     
-            map_c71258b718c0cf7530d0c549d6ea6b6e.fitBounds(
+            map_a480f00dd604002e9df7ea2653f93fb0.fitBounds(
                 [[48.198942, 16.36736], [48.198942, 16.36736]],
                 {}
             );
         
     
-        function geo_json_67b4e5b9902dbeb73fc5695963cb2add_styler(feature) {
+        function geo_json_17d9fea46d23d518398c0e19a84401cb_styler(feature) {
             switch(feature.id) {
                 default:
                     return {&quot;fillOpacity&quot;: 0.5, &quot;weight&quot;: 2};
             }
         }
-        function geo_json_67b4e5b9902dbeb73fc5695963cb2add_highlighter(feature) {
+        function geo_json_17d9fea46d23d518398c0e19a84401cb_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {&quot;fillOpacity&quot;: 0.75};
             }
         }
-        function geo_json_67b4e5b9902dbeb73fc5695963cb2add_pointToLayer(feature, latlng) {
+        function geo_json_17d9fea46d23d518398c0e19a84401cb_pointToLayer(feature, latlng) {
             var opts = {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 2, &quot;stroke&quot;: true, &quot;weight&quot;: 3};
             
-            let style = geo_json_67b4e5b9902dbeb73fc5695963cb2add_styler(feature)
+            let style = geo_json_17d9fea46d23d518398c0e19a84401cb_styler(feature)
             Object.assign(opts, style)
             
             return new L.CircleMarker(latlng, opts)
         }
 
-        function geo_json_67b4e5b9902dbeb73fc5695963cb2add_onEachFeature(feature, layer) {
+        function geo_json_17d9fea46d23d518398c0e19a84401cb_onEachFeature(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === &quot;function&quot;){
-                        geo_json_67b4e5b9902dbeb73fc5695963cb2add.resetStyle(e.target);
+                        geo_json_17d9fea46d23d518398c0e19a84401cb.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === &quot;function&quot;){
-                        const highlightStyle = geo_json_67b4e5b9902dbeb73fc5695963cb2add_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_17d9fea46d23d518398c0e19a84401cb_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_67b4e5b9902dbeb73fc5695963cb2add = L.geoJson(null, {
-                onEachFeature: geo_json_67b4e5b9902dbeb73fc5695963cb2add_onEachFeature,
+        var geo_json_17d9fea46d23d518398c0e19a84401cb = L.geoJson(null, {
+                onEachFeature: geo_json_17d9fea46d23d518398c0e19a84401cb_onEachFeature,
             
-                style: geo_json_67b4e5b9902dbeb73fc5695963cb2add_styler,
-                pointToLayer: geo_json_67b4e5b9902dbeb73fc5695963cb2add_pointToLayer
+                style: geo_json_17d9fea46d23d518398c0e19a84401cb_styler,
+                pointToLayer: geo_json_17d9fea46d23d518398c0e19a84401cb_pointToLayer
         });
 
-        function geo_json_67b4e5b9902dbeb73fc5695963cb2add_add (data) {
-            geo_json_67b4e5b9902dbeb73fc5695963cb2add
+        function geo_json_17d9fea46d23d518398c0e19a84401cb_add (data) {
+            geo_json_17d9fea46d23d518398c0e19a84401cb
                 .addData(data)
-                .addTo(map_c71258b718c0cf7530d0c549d6ea6b6e);
+                .addTo(map_a480f00dd604002e9df7ea2653f93fb0);
         }
-            geo_json_67b4e5b9902dbeb73fc5695963cb2add_add({&quot;bbox&quot;: [16.36736, 48.198942, 16.36736, 48.198942], &quot;features&quot;: [{&quot;bbox&quot;: [16.36736, 48.198942, 16.36736, 48.198942], &quot;geometry&quot;: {&quot;coordinates&quot;: [16.36736, 48.198942], &quot;type&quot;: &quot;Point&quot;}, &quot;id&quot;: &quot;0&quot;, &quot;properties&quot;: {&quot;name&quot;: &quot;Technical University of Vienna&quot;, &quot;type&quot;: &quot;University&quot;}, &quot;type&quot;: &quot;Feature&quot;}], &quot;type&quot;: &quot;FeatureCollection&quot;});
+            geo_json_17d9fea46d23d518398c0e19a84401cb_add({&quot;bbox&quot;: [16.36736, 48.198942, 16.36736, 48.198942], &quot;features&quot;: [{&quot;bbox&quot;: [16.36736, 48.198942, 16.36736, 48.198942], &quot;geometry&quot;: {&quot;coordinates&quot;: [16.36736, 48.198942], &quot;type&quot;: &quot;Point&quot;}, &quot;id&quot;: &quot;0&quot;, &quot;properties&quot;: {&quot;name&quot;: &quot;Technical University of Vienna&quot;, &quot;type&quot;: &quot;University&quot;}, &quot;type&quot;: &quot;Feature&quot;}], &quot;type&quot;: &quot;FeatureCollection&quot;});
 
         
     
-    geo_json_67b4e5b9902dbeb73fc5695963cb2add.bindTooltip(
+    geo_json_17d9fea46d23d518398c0e19a84401cb.bindTooltip(
     function(layer){
     let div = L.DomUtil.create(&#x27;div&#x27;);
     
@@ -777,7 +776,7 @@ By specifying a coordinate reference system, we know exactly where this object i
             &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
             &lt;style&gt;
-                #map_4aa55c71f4f2470d73d7931a2302592d {
+                #map_6e755f3bfb2891d0cea74494089e5e15 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -807,14 +806,14 @@ By specifying a coordinate reference system, we know exactly where this object i
 &lt;body&gt;
     
     
-            &lt;div class=&quot;folium-map&quot; id=&quot;map_4aa55c71f4f2470d73d7931a2302592d&quot; &gt;&lt;/div&gt;
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_6e755f3bfb2891d0cea74494089e5e15&quot; &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_4aa55c71f4f2470d73d7931a2302592d = L.map(
-                &quot;map_4aa55c71f4f2470d73d7931a2302592d&quot;,
+            var map_6e755f3bfb2891d0cea74494089e5e15 = L.map(
+                &quot;map_6e755f3bfb2891d0cea74494089e5e15&quot;,
                 {
                     center: [48.197728, 16.3688135],
                     crs: L.CRS.EPSG3857,
@@ -823,77 +822,77 @@ By specifying a coordinate reference system, we know exactly where this object i
                     preferCanvas: false,
                 }
             );
-            L.control.scale().addTo(map_4aa55c71f4f2470d73d7931a2302592d);
+            L.control.scale().addTo(map_6e755f3bfb2891d0cea74494089e5e15);
 
             
 
         
     
-            var tile_layer_3a665c67f97fad29e7e75bc54e7afd24 = L.tileLayer(
+            var tile_layer_30f1ef9a286e000cf3170788a3e0da85 = L.tileLayer(
                 &quot;https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png&quot;,
                 {&quot;attribution&quot;: &quot;\u0026copy; \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot;\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\&quot;https://carto.com/attributions\&quot;\u003eCARTO\u003c/a\u003e&quot;, &quot;detectRetina&quot;: false, &quot;maxNativeZoom&quot;: 20, &quot;maxZoom&quot;: 20, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}
-            ).addTo(map_4aa55c71f4f2470d73d7931a2302592d);
+            ).addTo(map_6e755f3bfb2891d0cea74494089e5e15);
         
     
-            map_4aa55c71f4f2470d73d7931a2302592d.fitBounds(
+            map_6e755f3bfb2891d0cea74494089e5e15.fitBounds(
                 [[48.196514, 16.36736], [48.198942, 16.370267]],
                 {}
             );
         
     
-        function geo_json_4cbcdc8a5c7173c96558cfed1a6d6b9f_styler(feature) {
+        function geo_json_5d83cef808f1d24012529a207294ea79_styler(feature) {
             switch(feature.id) {
                 default:
                     return {&quot;fillOpacity&quot;: 0.5, &quot;weight&quot;: 2};
             }
         }
-        function geo_json_4cbcdc8a5c7173c96558cfed1a6d6b9f_highlighter(feature) {
+        function geo_json_5d83cef808f1d24012529a207294ea79_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {&quot;fillOpacity&quot;: 0.75};
             }
         }
-        function geo_json_4cbcdc8a5c7173c96558cfed1a6d6b9f_pointToLayer(feature, latlng) {
+        function geo_json_5d83cef808f1d24012529a207294ea79_pointToLayer(feature, latlng) {
             var opts = {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 2, &quot;stroke&quot;: true, &quot;weight&quot;: 3};
             
-            let style = geo_json_4cbcdc8a5c7173c96558cfed1a6d6b9f_styler(feature)
+            let style = geo_json_5d83cef808f1d24012529a207294ea79_styler(feature)
             Object.assign(opts, style)
             
             return new L.CircleMarker(latlng, opts)
         }
 
-        function geo_json_4cbcdc8a5c7173c96558cfed1a6d6b9f_onEachFeature(feature, layer) {
+        function geo_json_5d83cef808f1d24012529a207294ea79_onEachFeature(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === &quot;function&quot;){
-                        geo_json_4cbcdc8a5c7173c96558cfed1a6d6b9f.resetStyle(e.target);
+                        geo_json_5d83cef808f1d24012529a207294ea79.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === &quot;function&quot;){
-                        const highlightStyle = geo_json_4cbcdc8a5c7173c96558cfed1a6d6b9f_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_5d83cef808f1d24012529a207294ea79_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_4cbcdc8a5c7173c96558cfed1a6d6b9f = L.geoJson(null, {
-                onEachFeature: geo_json_4cbcdc8a5c7173c96558cfed1a6d6b9f_onEachFeature,
+        var geo_json_5d83cef808f1d24012529a207294ea79 = L.geoJson(null, {
+                onEachFeature: geo_json_5d83cef808f1d24012529a207294ea79_onEachFeature,
             
-                style: geo_json_4cbcdc8a5c7173c96558cfed1a6d6b9f_styler,
-                pointToLayer: geo_json_4cbcdc8a5c7173c96558cfed1a6d6b9f_pointToLayer
+                style: geo_json_5d83cef808f1d24012529a207294ea79_styler,
+                pointToLayer: geo_json_5d83cef808f1d24012529a207294ea79_pointToLayer
         });
 
-        function geo_json_4cbcdc8a5c7173c96558cfed1a6d6b9f_add (data) {
-            geo_json_4cbcdc8a5c7173c96558cfed1a6d6b9f
+        function geo_json_5d83cef808f1d24012529a207294ea79_add (data) {
+            geo_json_5d83cef808f1d24012529a207294ea79
                 .addData(data)
-                .addTo(map_4aa55c71f4f2470d73d7931a2302592d);
+                .addTo(map_6e755f3bfb2891d0cea74494089e5e15);
         }
-            geo_json_4cbcdc8a5c7173c96558cfed1a6d6b9f_add({&quot;bbox&quot;: [16.36736, 48.196514, 16.370267, 48.198942], &quot;features&quot;: [{&quot;bbox&quot;: [16.36736, 48.196514, 16.370267, 48.198942], &quot;geometry&quot;: {&quot;coordinates&quot;: [[16.36736, 48.198942], [16.370267, 48.196514], [16.369908, 48.198917]], &quot;type&quot;: &quot;LineString&quot;}, &quot;id&quot;: &quot;0&quot;, &quot;properties&quot;: {}, &quot;type&quot;: &quot;Feature&quot;}], &quot;type&quot;: &quot;FeatureCollection&quot;});
+            geo_json_5d83cef808f1d24012529a207294ea79_add({&quot;bbox&quot;: [16.36736, 48.196514, 16.370267, 48.198942], &quot;features&quot;: [{&quot;bbox&quot;: [16.36736, 48.196514, 16.370267, 48.198942], &quot;geometry&quot;: {&quot;coordinates&quot;: [[16.36736, 48.198942], [16.370267, 48.196514], [16.369908, 48.198917]], &quot;type&quot;: &quot;LineString&quot;}, &quot;id&quot;: &quot;0&quot;, &quot;properties&quot;: {}, &quot;type&quot;: &quot;Feature&quot;}], &quot;type&quot;: &quot;FeatureCollection&quot;});
 
         
     
-    geo_json_4cbcdc8a5c7173c96558cfed1a6d6b9f.bindTooltip(
+    geo_json_5d83cef808f1d24012529a207294ea79.bindTooltip(
     function(layer){
     let div = L.DomUtil.create(&#x27;div&#x27;);
     
@@ -948,7 +947,7 @@ By specifying a coordinate reference system, we know exactly where this object i
             &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
             &lt;style&gt;
-                #map_26e5716b6a7830be25d4de73a255e7a3 {
+                #map_d19a870906471be32a320f31e3e1cee1 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -978,14 +977,14 @@ By specifying a coordinate reference system, we know exactly where this object i
 &lt;body&gt;
     
     
-            &lt;div class=&quot;folium-map&quot; id=&quot;map_26e5716b6a7830be25d4de73a255e7a3&quot; &gt;&lt;/div&gt;
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_d19a870906471be32a320f31e3e1cee1&quot; &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_26e5716b6a7830be25d4de73a255e7a3 = L.map(
-                &quot;map_26e5716b6a7830be25d4de73a255e7a3&quot;,
+            var map_d19a870906471be32a320f31e3e1cee1 = L.map(
+                &quot;map_d19a870906471be32a320f31e3e1cee1&quot;,
                 {
                     center: [48.197728, 16.3688135],
                     crs: L.CRS.EPSG3857,
@@ -994,77 +993,77 @@ By specifying a coordinate reference system, we know exactly where this object i
                     preferCanvas: false,
                 }
             );
-            L.control.scale().addTo(map_26e5716b6a7830be25d4de73a255e7a3);
+            L.control.scale().addTo(map_d19a870906471be32a320f31e3e1cee1);
 
             
 
         
     
-            var tile_layer_099129c794aee849a7215a613ead3e63 = L.tileLayer(
+            var tile_layer_bbd6b7e97edbaeb27c45d06edff535b4 = L.tileLayer(
                 &quot;https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png&quot;,
                 {&quot;attribution&quot;: &quot;\u0026copy; \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot;\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\&quot;https://carto.com/attributions\&quot;\u003eCARTO\u003c/a\u003e&quot;, &quot;detectRetina&quot;: false, &quot;maxNativeZoom&quot;: 20, &quot;maxZoom&quot;: 20, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}
-            ).addTo(map_26e5716b6a7830be25d4de73a255e7a3);
+            ).addTo(map_d19a870906471be32a320f31e3e1cee1);
         
     
-            map_26e5716b6a7830be25d4de73a255e7a3.fitBounds(
+            map_d19a870906471be32a320f31e3e1cee1.fitBounds(
                 [[48.196514, 16.36736], [48.198942, 16.370267]],
                 {}
             );
         
     
-        function geo_json_3c94a788eca0d1c49323f995f78462a9_styler(feature) {
+        function geo_json_d3ac56474ba2bde474ad7e1892fd157d_styler(feature) {
             switch(feature.id) {
                 default:
                     return {&quot;fillOpacity&quot;: 0.5, &quot;weight&quot;: 2};
             }
         }
-        function geo_json_3c94a788eca0d1c49323f995f78462a9_highlighter(feature) {
+        function geo_json_d3ac56474ba2bde474ad7e1892fd157d_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {&quot;fillOpacity&quot;: 0.75};
             }
         }
-        function geo_json_3c94a788eca0d1c49323f995f78462a9_pointToLayer(feature, latlng) {
+        function geo_json_d3ac56474ba2bde474ad7e1892fd157d_pointToLayer(feature, latlng) {
             var opts = {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 2, &quot;stroke&quot;: true, &quot;weight&quot;: 3};
             
-            let style = geo_json_3c94a788eca0d1c49323f995f78462a9_styler(feature)
+            let style = geo_json_d3ac56474ba2bde474ad7e1892fd157d_styler(feature)
             Object.assign(opts, style)
             
             return new L.CircleMarker(latlng, opts)
         }
 
-        function geo_json_3c94a788eca0d1c49323f995f78462a9_onEachFeature(feature, layer) {
+        function geo_json_d3ac56474ba2bde474ad7e1892fd157d_onEachFeature(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === &quot;function&quot;){
-                        geo_json_3c94a788eca0d1c49323f995f78462a9.resetStyle(e.target);
+                        geo_json_d3ac56474ba2bde474ad7e1892fd157d.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === &quot;function&quot;){
-                        const highlightStyle = geo_json_3c94a788eca0d1c49323f995f78462a9_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_d3ac56474ba2bde474ad7e1892fd157d_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_3c94a788eca0d1c49323f995f78462a9 = L.geoJson(null, {
-                onEachFeature: geo_json_3c94a788eca0d1c49323f995f78462a9_onEachFeature,
+        var geo_json_d3ac56474ba2bde474ad7e1892fd157d = L.geoJson(null, {
+                onEachFeature: geo_json_d3ac56474ba2bde474ad7e1892fd157d_onEachFeature,
             
-                style: geo_json_3c94a788eca0d1c49323f995f78462a9_styler,
-                pointToLayer: geo_json_3c94a788eca0d1c49323f995f78462a9_pointToLayer
+                style: geo_json_d3ac56474ba2bde474ad7e1892fd157d_styler,
+                pointToLayer: geo_json_d3ac56474ba2bde474ad7e1892fd157d_pointToLayer
         });
 
-        function geo_json_3c94a788eca0d1c49323f995f78462a9_add (data) {
-            geo_json_3c94a788eca0d1c49323f995f78462a9
+        function geo_json_d3ac56474ba2bde474ad7e1892fd157d_add (data) {
+            geo_json_d3ac56474ba2bde474ad7e1892fd157d
                 .addData(data)
-                .addTo(map_26e5716b6a7830be25d4de73a255e7a3);
+                .addTo(map_d19a870906471be32a320f31e3e1cee1);
         }
-            geo_json_3c94a788eca0d1c49323f995f78462a9_add({&quot;bbox&quot;: [16.36736, 48.196514, 16.370267, 48.198942], &quot;features&quot;: [{&quot;bbox&quot;: [16.36736, 48.196514, 16.370267, 48.198942], &quot;geometry&quot;: {&quot;coordinates&quot;: [[[16.36736, 48.198942], [16.370267, 48.196514], [16.369908, 48.198917], [16.36736, 48.198942]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;id&quot;: &quot;0&quot;, &quot;properties&quot;: {}, &quot;type&quot;: &quot;Feature&quot;}], &quot;type&quot;: &quot;FeatureCollection&quot;});
+            geo_json_d3ac56474ba2bde474ad7e1892fd157d_add({&quot;bbox&quot;: [16.36736, 48.196514, 16.370267, 48.198942], &quot;features&quot;: [{&quot;bbox&quot;: [16.36736, 48.196514, 16.370267, 48.198942], &quot;geometry&quot;: {&quot;coordinates&quot;: [[[16.36736, 48.198942], [16.370267, 48.196514], [16.369908, 48.198917], [16.36736, 48.198942]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;id&quot;: &quot;0&quot;, &quot;properties&quot;: {}, &quot;type&quot;: &quot;Feature&quot;}], &quot;type&quot;: &quot;FeatureCollection&quot;});
 
         
     
-    geo_json_3c94a788eca0d1c49323f995f78462a9.bindTooltip(
+    geo_json_d3ac56474ba2bde474ad7e1892fd157d.bindTooltip(
     function(layer){
     let div = L.DomUtil.create(&#x27;div&#x27;);
     

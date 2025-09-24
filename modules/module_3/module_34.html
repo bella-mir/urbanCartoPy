@@ -34,7 +34,6 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -64,7 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'modules/module_3/module_34';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Spatial Aggregation" href="module_33.html" />
+    <link rel="prev" title="Spatial Relationships and Join" href="module_32.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,7 +182,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="module_30.html">Overview - Spatial Operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module_31.html">Basic Geoprocessing Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module_32.html">Spatial Relationships and Join</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_33.html">Spatial Aggregation</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Task - Service Accessibility</a></li>
 </ul>
 
@@ -239,7 +237,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/bella-mir/urbanCartoPy" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -256,7 +254,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmodules/module_3/module_34.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/bella-mir/urbanCartoPy/issues/new?title=Issue%20on%20page%20%2Fmodules/module_3/module_34.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -432,8 +430,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#houses = gpd.read_file(&quot;path_to/houses.geojson&quot;)</span>
-<span class="c1">#services = gpd.read_file(&quot;path_to/services.geojson&quot;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load your datasets here</span>
 </pre></div>
 </div>
 </div>
@@ -444,8 +441,7 @@ document.write(`
 <p>To measure distances correctly, reproject your data to an appropriate <strong>UTM CRS</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#houses = houses.to_crs(epsg=32636)  # example</span>
-<span class="c1">#services = services.to_crs(epsg=32636)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reproject here</span>
 </pre></div>
 </div>
 </div>
@@ -459,7 +455,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#service_buffers = services.buffer(1000)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#buffer here</span>
 </pre></div>
 </div>
 </div>
@@ -472,7 +468,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#houses_near_services = gpd.sjoin(houses, service_buffers, predicate=&quot;within&quot;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#spatial join</span>
 </pre></div>
 </div>
 </div>
@@ -486,7 +482,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#summary = houses_near_services.groupby(&quot;service_type&quot;).size()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#summary</span>
 </pre></div>
 </div>
 </div>
@@ -500,9 +496,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#ax = service_buffers.plot(color=&quot;lightblue&quot;, alpha=0.4)</span>
-<span class="c1">#houses.plot(ax=ax, color=&quot;gray&quot;)</span>
-<span class="c1">#houses_near_services.plot(ax=ax, color=&quot;red&quot;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#vis</span>
 </pre></div>
 </div>
 </div>
@@ -553,12 +547,12 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="module_33.html"
+       href="module_32.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Spatial Aggregation</p>
+        <p class="prev-next-title">Spatial Relationships and Join</p>
       </div>
     </a>
 </div></div>

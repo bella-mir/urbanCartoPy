@@ -1,0 +1,603 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spatial Aggregation &#8212; Urban Cartography</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modules/module_3/module_33';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Task - Service Accessibility" href="module_34.html" />
+    <link rel="prev" title="Spatial Relationships and Join" href="module_32.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Spatial Data Analysis in Urban Cartography
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../module_0/module_00.html">Before You Begin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_0/module_01.html">Project Overview: 15-Minute City</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_0/module_02.html">Environment setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_0/module_03.html">Python in GIS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">I. Geospatial Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../module_1/module_10.html">Overview - Geospatial Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1/module_11.html">Spatial Data Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1/module_12.html">Reading Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1/module_13.html">Exporting data from OSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1/module_14.html">Task - Collecting data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">II. Projections and Coordinate Reference Systems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../module_2/module_20.html">Overview - Projections and CRS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2/module_21.html">Introduction to Projections and Coordinate Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2/module_22.html">Reprojecting Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2/module_23.html">Measuring Areas and Distances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2/module_24.html">Task - Explore Landuse</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">III. Spatial Operations</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="module_30.html">Overview - Spatial Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_31.html">Basic Geoprocessing Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_32.html">Spatial Relationships and Join</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Spatial Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_34.html">Task - Service Accessibility</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/bella-mir/urbanCartoPy" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/bella-mir/urbanCartoPy/issues/new?title=Issue%20on%20page%20%2Fmodules/module_3/module_33.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/modules/module_3/module_33.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Spatial Aggregation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-grid">Creating a Grid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-aggregation-point-count">Data aggregation - Point Count</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attribute-aggregation-by-spatial-units">Attribute Aggregation by Spatial Units</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="spatial-aggregation">
+<h1>Spatial Aggregation<a class="headerlink" href="#spatial-aggregation" title="Permalink to this heading">#</a></h1>
+<p>One powerful technique in spatial analysis is <strong>spatial aggregation</strong> — summarizing data based on geographic units.<br />
+This helps us move from individual features (like points or lines) to broader patterns and trends.</p>
+<p>A common use case is analyzing the <strong>density of point features</strong> — such as cafés, crime incidents, or public facilities — across a city or region.<br />
+To do this, we often create a <strong>regular grid</strong> (also known as a <strong>fishnet</strong>) that covers the area of interest and then count how many points fall within each grid cell.</p>
+<p>This regular grid allows for:</p>
+<ul class="simple">
+<li><p>Uniform spatial comparison across the entire area</p></li>
+<li><p>Easy visualization of patterns and clusters</p></li>
+<li><p>Compatibility with heatmaps or raster-like outputs</p></li>
+</ul>
+<p>This method provides a <strong>visual and quantitative understanding</strong> of how features are distributed in space. It helps to:</p>
+<ul class="simple">
+<li><p>Identify hotspots or areas with low activity</p></li>
+<li><p>Compare different parts of the city based on feature concentration</p></li>
+<li><p>Support decision-making in urban planning, public services, and resource allocation</p></li>
+</ul>
+<p>In addition to using a uniform grid, you can also aggregate points by <strong>existing administrative boundaries</strong> — such as districts or neighborhoods — using a <strong>spatial join</strong> followed by a <code class="docutils literal notranslate"><span class="pre">groupby</span></code>.</p>
+<p>Spatial aggregation turns raw geographic data into structured insights that are easier to analyze and communicate.</p>
+<div class="section" id="creating-a-grid">
+<h2>Creating a Grid<a class="headerlink" href="#creating-a-grid" title="Permalink to this heading">#</a></h2>
+<p>To build a grid, we need two things: the <strong>boundary of the area</strong> we’re interested in and a <strong>cell size</strong>.<br />
+For example, let’s use the boundary of one of the districts in Saint Petersburg and set the grid cell size to 200 meters.</p>
+<p>We’ll write a simple algorithm that takes the <strong>extent (bounding box)</strong> of the selected area and the desired <strong>cell size</strong>, and generates a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> containing a polygon-based grid (fishnet) that fully covers the area.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#example is coming soon</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-aggregation-point-count">
+<h2>Data aggregation - Point Count<a class="headerlink" href="#data-aggregation-point-count" title="Permalink to this heading">#</a></h2>
+<p>#example is coming soon</p>
+</div>
+<div class="section" id="attribute-aggregation-by-spatial-units">
+<h2>Attribute Aggregation by Spatial Units<a class="headerlink" href="#attribute-aggregation-by-spatial-units" title="Permalink to this heading">#</a></h2>
+<p>In this step, we’re not just counting how many points fall into each polygon —<br />
+we’re <strong>aggregating the attributes of those points</strong> within spatial units such as grid cells or administrative areas.</p>
+<p>This type of aggregation is useful when:</p>
+<ul class="simple">
+<li><p>You want to calculate the <strong>average</strong>, <strong>sum</strong>, or <strong>max/min</strong> of a numerical field (e.g., café rating, capacity, number of employees)</p></li>
+<li><p>You need to analyze <strong>thematic data</strong> by location, not just spatial distribution</p></li>
+<li><p>You’re preparing values for <strong>choropleth maps</strong> or <strong>statistical summaries</strong> tied to specific areas</p></li>
+</ul>
+<div class="section" id="workflow">
+<h3>Workflow:<a class="headerlink" href="#workflow" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Perform a <strong>spatial join</strong> to assign each point to its corresponding polygon or grid cell</p></li>
+<li><p>Use <strong><code class="docutils literal notranslate"><span class="pre">groupby()</span></code></strong> on the polygon ID and apply aggregation functions (e.g. <code class="docutils literal notranslate"><span class="pre">.mean()</span></code>, <code class="docutils literal notranslate"><span class="pre">.sum()</span></code>, <code class="docutils literal notranslate"><span class="pre">.max()</span></code>)</p></li>
+</ol>
+<p>This approach combines <strong>spatial relationships</strong> with <strong>attribute-level insights</strong>, making it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#example is coming soon</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<p>In this section, we learned how to <strong>summarize point data over space</strong> to reveal patterns and trends.</p>
+<p>We explored how to:</p>
+<ul class="simple">
+<li><p>Build a <strong>regular grid (fishnet)</strong> over an area of interest by choosing a <strong>cell size</strong> and clipping it to the boundary.</p></li>
+<li><p>Use a <strong>spatial join + <code class="docutils literal notranslate"><span class="pre">groupby()</span></code></strong> to compute <strong>point counts per cell</strong> (a proxy for density) and to perform <strong>attribute aggregation</strong> (e.g., mean/sum/max of fields).</p></li>
+<li><p>Aggregate by <strong>existing administrative units</strong> (districts/neighborhoods) as an alternative to a uniform grid.</p></li>
+<li><p><strong>Normalize</strong> results (e.g., by <strong>cell area</strong> or <strong>population</strong>) to get comparable <strong>rates/densities</strong> across space.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./modules/module_3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="module_32.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Spatial Relationships and Join</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="module_34.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Task - Service Accessibility</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-grid">Creating a Grid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-aggregation-point-count">Data aggregation - Point Count</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attribute-aggregation-by-spatial-units">Attribute Aggregation by Spatial Units</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bella Mironova
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
